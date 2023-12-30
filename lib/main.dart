@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      
         minTextAdapt: true,
         splitScreenMode: true,
         // designSize: const Size(390, 844),
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Daud k\'s Portfolio',
-            theme: theme(),
+            theme: theme(context),
             // home: ResponsiveLayout(mobileScaffold: mobileScaffold, tabletScaffold: tabletScaffold, desktopScaffold: desktopScaffold),
             initialRoute: Routes.home,
             onGenerateRoute: RouteGenerator().generateRoute,

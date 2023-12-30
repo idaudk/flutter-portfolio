@@ -49,7 +49,7 @@ dependencies:
   logger: ^2.0.2+1
   flutter_screenutil: ^5.8.4
   gap: ^3.0.1
-  macos_ui: ^2.0.2
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio_daudk/config/themes/layout_values.dart';
 import 'package:portfolio_daudk/ui/widgets/constant_widgets.dart';
 
 class HomeTabletScreen extends StatelessWidget {
@@ -7,10 +9,12 @@ class HomeTabletScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Daud k\'s Portfolio'),
-      ),
-      drawer: mobileDrawer,
-    );
+        appBar: AppBar(
+          title: const Text('Daud k\'s Portfolio Tablet'),
+        ),
+        drawer: mobileDrawer,
+        body: Column(
+          children: [MobileTabletHeroSection()],
+        ));
   }
 }

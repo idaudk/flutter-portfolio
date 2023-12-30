@@ -9,9 +9,12 @@ class HomeMobileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daud k\'s Portfolio'),
+        title: const Text('Daud k\'s Portfolio Mobile'),
       ),
       drawer: mobileDrawer,
+      body: Column(
+        children: [MobileTabletHeroSection()],
+      ),
     );
   }
 }
