@@ -602,7 +602,21 @@ class HeroSection extends StatelessWidget {
           'Daud',
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.displayLarge,
-        ),
+        )
+            .roll(
+              'xyzw',
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              tapeCurve: Curves.easeInOutQuart,
+              tapeSlideDirection: TapeSlideDirection.down,
+              
+              staggerTapes: true,
+              staggerSoftness: 2,
+              reverseStaggerDirection: true,
+            )
+            .oneShot(
+                duration: Duration(milliseconds: 900),
+                repeat: 100,
+                curve: Curves.easeOutQuart),
         Text(
           'SOFTWARE ENGINEER, FLUTTER DEVELOPER.',
           textAlign: TextAlign.center,
