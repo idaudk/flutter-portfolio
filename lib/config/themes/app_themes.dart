@@ -53,46 +53,92 @@ ThemeData theme(BuildContext context) {
           decoration: const BoxDecoration(color: AppColors.cardGrey),
           headingRowColor: MaterialStateProperty.all(AppColors.cardGrey),
           dataRowColor: MaterialStateProperty.all(AppColors.cardGrey)),
-      textTheme: GoogleFonts.plusJakartaSansTextTheme(textTheme).copyWith(
-          //used in header logo
-          headlineMedium: GoogleFonts.plusJakartaSans(
-              fontWeight: FontWeight.w700,
-              color: AppColors.headingColor,
-              fontSize: 26),
-          // used in menu items
-          titleMedium: GoogleFonts.plusJakartaSans(
-              fontSize: 18,
-              fontWeight: FontWeight.w700,
-              color: AppColors.headingColor),
-          //main body font
-          bodyMedium: GoogleFonts.plusJakartaSans(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              height: 1.8,
-              color: AppColors.txtColor),
-          // used in hero section title
-          displayLarge: GoogleFonts.plusJakartaSans(
-              fontWeight: FontWeight.w700,
-              color: AppColors.headingColor,
-              fontSize: 75),
-          displaySmall: GoogleFonts.plusJakartaSans(
-              fontWeight: FontWeight.w700,
-              color: AppColors.headingColor,
-              fontSize: 20),
-          // container main headings
-          displayMedium: GoogleFonts.plusJakartaSans(
-              fontWeight: FontWeight.w700,
-              color: AppColors.headingColor,
-              fontSize: 60),
-
-          //hero section description
-          bodyLarge: GoogleFonts.plusJakartaSans(
-            fontSize: 20,
-            color: AppColors.txtColor,
+      textTheme: const TextTheme(
+        //used in header logo
+        headlineMedium: TextStyle(
+            fontWeight: FontWeight.w700,
+            color: AppColors.headingColor,
+            fontSize: 26),
+        // used in menu items
+        titleMedium: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+            color: AppColors.headingColor),
+        //main body font
+        bodyMedium: TextStyle(
+            fontSize: 16,
             fontWeight: FontWeight.w400,
-          ),
-          labelLarge: GoogleFonts.plusJakartaSans(color: AppColors.txtColor),
-          labelMedium: GoogleFonts.plusJakartaSans(color: AppColors.txtColor)),
+            height: 1.8,
+            color: AppColors.txtColor),
+        //body small font
+        bodySmall: TextStyle(height: 1.8, color: AppColors.txtColor),
+        // used in hero section title
+        displayLarge: TextStyle(
+            fontWeight: FontWeight.w700,
+            color: AppColors.headingColor,
+            fontSize: 75),
+        displaySmall: TextStyle(
+            fontWeight: FontWeight.w700,
+            color: AppColors.headingColor,
+            fontSize: 20),
+        // container main headings
+        displayMedium: TextStyle(
+            fontWeight: FontWeight.w700,
+            color: AppColors.headingColor,
+            fontSize: 60),
+
+        //hero section description
+        bodyLarge: TextStyle(
+          fontSize: 20,
+          color: AppColors.txtColor,
+          fontWeight: FontWeight.w400,
+        ),
+        labelLarge: TextStyle(color: AppColors.txtColor),
+        labelMedium: TextStyle(color: AppColors.txtColor),
+      ),
+      // textTheme: GoogleFonts.plusJakartaSansTextTheme(textTheme).copyWith(
+      //     //used in header logo
+      //     headlineMedium: GoogleFonts.plusJakartaSans(
+      //         fontWeight: FontWeight.w700,
+      //         color: AppColors.headingColor,
+      //         fontSize: 26),
+      //     // used in menu items
+      //     titleMedium: GoogleFonts.plusJakartaSans(
+      //         fontSize: 18,
+      //         fontWeight: FontWeight.w700,
+      //         color: AppColors.headingColor),
+      //     //main body font
+      //     bodyMedium: GoogleFonts.plusJakartaSans(
+      //         fontSize: 16,
+      //         fontWeight: FontWeight.w400,
+      //         height: 1.8,
+      //         color: AppColors.txtColor),
+      //     //body small font
+      //     bodySmall: GoogleFonts.plusJakartaSans(
+      //         height: 1.8, color: AppColors.txtColor),
+      //     // used in hero section title
+      //     displayLarge: GoogleFonts.plusJakartaSans(
+      //         fontWeight: FontWeight.w700,
+      //         color: AppColors.headingColor,
+      //         fontSize: 75),
+      //     displaySmall: GoogleFonts.plusJakartaSans(
+      //         fontWeight: FontWeight.w700,
+      //         color: AppColors.headingColor,
+      //         fontSize: 20),
+      //     // container main headings
+      //     displayMedium: GoogleFonts.plusJakartaSans(
+      //         fontWeight: FontWeight.w700,
+      //         color: AppColors.headingColor,
+      //         fontSize: 60),
+
+      //     //hero section description
+      //     bodyLarge: GoogleFonts.plusJakartaSans(
+      //       fontSize: 20,
+      //       color: AppColors.txtColor,
+      //       fontWeight: FontWeight.w400,
+      //     ),
+      //     labelLarge: GoogleFonts.plusJakartaSans(color: AppColors.txtColor),
+      //     labelMedium: GoogleFonts.plusJakartaSans(color: AppColors.txtColor)),
       // styling for appbar
       appBarTheme: appBarTheme());
 }

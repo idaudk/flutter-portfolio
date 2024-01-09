@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,8 +31,8 @@ class _AnimatedButtonState extends State<AnimatedButton>
   @override
   void initState() {
     print('Animated button init');
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 800));
 
     _curve = CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
 
@@ -114,56 +116,62 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        return MouseRegion(
-          cursor: SystemMouseCursors.click,
-          onEnter: (e) {
-            _controller.forward();
-          },
-          onExit: (e) {
-            _controller.reverse();
-          },
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 500),
-            padding: _paddingAnimation.value,
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: const [
-                  AppColors.primaryColor,
-                  AppColors.primaryColor2
-                ], begin: _gradientBegin.value, end: _gradientEnd.value),
-                // border: _borderAnimation.value,
-                // color: _colorAnimation.value,
-                borderRadius: AppDeco.appBorderRadius),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 3.h),
-                  child: Text(
-                    'Schedule a free consultation',
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(),
+    return BackdropFilter(
+      filter: ImageFilter.blur(
+        sigmaX: 0,
+        sigmaY: 0
+      ),
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return MouseRegion(
+            cursor: SystemMouseCursors.click,
+            onEnter: (e) {
+              _controller.forward();
+            },
+            onExit: (e) {
+              _controller.reverse();
+            },
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 500),
+              padding: _paddingAnimation.value,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: const [
+                    AppColors.primaryColor,
+                    AppColors.primaryColor2
+                  ], begin: _gradientBegin.value, end: _gradientEnd.value),
+                  // border: _borderAnimation.value,
+                  // color: _colorAnimation.value,
+                  borderRadius: AppDeco.appBorderRadius),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 3.h),
+                    child: Text(
+                      'Schedule a free consultation',
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(),
+                    ),
                   ),
-                ),
-                Gap(2.w),
-                Transform.rotate(
-                  //multiplying by 10 to increase the effect
-                  angle: _rightArrowAnimation.value * -1,
-                  // offset: Offset(_rightArrowAnimation.value * 10, 0),
-                  child: Icon(
-                    CupertinoIcons.arrow_right,
-                    color: AppColors.txtColor,
-                    size: 14.r,
+                  Gap(2.w),
+                  Transform.rotate(
+                    //multiplying by 10 to increase the effect
+                    angle: _rightArrowAnimation.value * -1,
+                    // offset: Offset(_rightArrowAnimation.value * 10, 0),
+                    child: Icon(
+                      CupertinoIcons.arrow_right,
+                      color: AppColors.txtColor,
+                      size: 14.r,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
