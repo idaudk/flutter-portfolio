@@ -32,36 +32,6 @@ var mobileDrawer = const Drawer(
   ]),
 );
 
-class CustomButton extends StatelessWidget {
-  String text;
-  IconData icon;
-  Function()? onTap;
-  CustomButton(
-      {required this.text,
-      this.onTap,
-      this.icon = CupertinoIcons.arrow_right,
-      super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: onTap,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              text,
-            ),
-            Gap(LayoutValues.cardsOuterXSpace),
-            Icon(
-              icon,
-              size: 15.h,
-            ),
-          ],
-        ));
-  }
-}
-
 class MobileTabletHeroSection extends StatelessWidget {
   const MobileTabletHeroSection({super.key});
 
@@ -79,18 +49,12 @@ class MobileTabletHeroSection extends StatelessWidget {
               Text(
                 'Daud Khan',
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .displayLarge!
-                    .copyWith(fontSize: 35.sp),
+                style: Theme.of(context).textTheme.displayLarge,
               ),
               Text(
                 'SOFTWARE ENGINEER, FLUTTER DEVELOPER.',
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(fontSize: 12.sp),
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
           ),

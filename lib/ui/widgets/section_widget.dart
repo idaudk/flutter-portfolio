@@ -1,18 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_daudk/config/themes/layout_values.dart';
 
 class SectionWidget extends StatelessWidget {
   Widget child;
   List<Color> colors;
-  SectionWidget({this.colors = const [], required this.child, super.key});
+  bool isMobile;
+  SectionWidget({this.colors = const [], required this.child, this.isMobile = false, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: LayoutValues.containerYSpace),
+      padding: EdgeInsets.symmetric(vertical: LayoutValues.containerYSpace, horizontal: isMobile ? 10.w : 0),
       decoration: BoxDecoration(
-          // border: Border(top: BorderSide(width: 3, color: Colors.yellowAccent)),
           gradient: colors.isEmpty
               ? null
               : LinearGradient(

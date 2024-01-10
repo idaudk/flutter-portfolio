@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // designSize: const Size(390, 844),
 
         builder: (context, child) {
-          bool isMobile = ScreenUtil().screenWidth < 1100.0;
+          bool isMobile = ScreenUtil().screenWidth < 1100;
           return MaterialApp(
             // scrollBehavior: CustomScrollBehavior(),
             debugShowCheckedModeBanner: false,

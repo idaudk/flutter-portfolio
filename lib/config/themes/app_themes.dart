@@ -20,7 +20,7 @@ abstract class AppColors {
 }
 
 abstract class AppFonts {
-   static String mainFont = 'PlusJakartaSans';
+  static String mainFont = 'PlusJakartaSans';
 }
 
 ThemeData theme(BuildContext context, bool isMobile) {
@@ -61,7 +61,7 @@ ThemeData theme(BuildContext context, bool isMobile) {
           decoration: const BoxDecoration(color: AppColors.cardGrey),
           headingRowColor: MaterialStateProperty.all(AppColors.cardGrey),
           dataRowColor: MaterialStateProperty.all(AppColors.cardGrey)),
-      textTheme:  isMobile ? mobileTextTheme() : desktopTextTheme(),
+      textTheme: isMobile ? mobileTextTheme() : desktopTextTheme(),
       splashColor: AppColors.primaryColor,
       // styling for appbar
       listTileTheme: ListTileThemeData(
@@ -70,133 +70,131 @@ ThemeData theme(BuildContext context, bool isMobile) {
       appBarTheme: appBarTheme());
 }
 
-TextTheme desktopTextTheme(){
+TextTheme desktopTextTheme() {
   return TextTheme(
-        //used in header logo
-        headlineMedium: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontFamily: AppFonts.mainFont,
-            color: AppColors.headingColor,
-            fontSize: 26),
-        // used in menu items
-        titleMedium: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w700,
-            fontFamily: AppFonts.mainFont,
-            color: AppColors.headingColor),
-        //main body font
-        bodyMedium: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-            fontFamily: AppFonts.mainFont,
-            height: 1.8,
-            color: AppColors.txtColor),
-        //body small font
-        bodySmall: TextStyle(
-          height: 1.8,
-          color: AppColors.txtColor,
-          fontFamily: AppFonts.mainFont,
-        ),
-        // used in hero section title
-        displayLarge: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontFamily: AppFonts.mainFont,
-            color: AppColors.headingColor,
-            fontSize: 75),
-        displaySmall: TextStyle(
-            fontWeight: FontWeight.w700,
-            color: AppColors.headingColor,
-            fontFamily: AppFonts.mainFont,
-            fontSize: 20),
-        // container main headings
-        displayMedium: TextStyle(
-            fontFamily: AppFonts.mainFont,
-            fontWeight: FontWeight.w700,
-            color: AppColors.headingColor,
-            fontSize: 60),
+    //used in header logo
+    headlineMedium: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontFamily: AppFonts.mainFont,
+        color: AppColors.headingColor,
+        fontSize: 26),
+    // used in menu items
+    titleMedium: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        fontFamily: AppFonts.mainFont,
+        color: AppColors.headingColor),
+    //main body font
+    bodyMedium: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        fontFamily: AppFonts.mainFont,
+        height: 1.8,
+        color: AppColors.txtColor),
+    //body small font
+    bodySmall: TextStyle(
+      height: 1.8,
+      color: AppColors.txtColor,
+      fontFamily: AppFonts.mainFont,
+    ),
+    // used in hero section title
+    displayLarge: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontFamily: AppFonts.mainFont,
+        color: AppColors.headingColor,
+        fontSize: 75),
+    displaySmall: TextStyle(
+        fontWeight: FontWeight.w700,
+        color: AppColors.headingColor,
+        fontFamily: AppFonts.mainFont,
+        fontSize: 20),
+    // container main headings
+    displayMedium: TextStyle(
+        fontFamily: AppFonts.mainFont,
+        fontWeight: FontWeight.w700,
+        color: AppColors.headingColor,
+        fontSize: 60),
 
-        //hero section description
-        bodyLarge: TextStyle(
-          fontFamily: AppFonts.mainFont,
-          fontSize: 20,
-          color: AppColors.txtColor,
-          fontWeight: FontWeight.w400,
-        ),
-        labelLarge: TextStyle(
-          color: AppColors.txtColor,
-          fontFamily: AppFonts.mainFont,
-        ),
-        labelMedium: TextStyle(
-          color: AppColors.txtColor,
-          fontFamily: AppFonts.mainFont,
-        ),
-      );
+    //hero section description
+    bodyLarge: TextStyle(
+      fontFamily: AppFonts.mainFont,
+      fontSize: 20,
+      color: AppColors.txtColor,
+      fontWeight: FontWeight.w400,
+    ),
+    labelLarge: TextStyle(
+      color: AppColors.txtColor,
+      fontFamily: AppFonts.mainFont,
+    ),
+    labelMedium: TextStyle(
+      color: AppColors.txtColor,
+      fontFamily: AppFonts.mainFont,
+    ),
+  );
 }
 
-TextTheme mobileTextTheme(){
+TextTheme mobileTextTheme() {
   return TextTheme(
-        //used in header logo
-        headlineMedium: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontFamily: AppFonts.mainFont,
-            color: AppColors.headingColor,
-            fontSize: 26.sp),
-        // used in menu items
-        titleMedium: TextStyle(
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w700,
-            fontFamily: AppFonts.mainFont,
-            color: AppColors.headingColor),
-        //main body font
-        bodyMedium: TextStyle(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w400,
-            fontFamily: AppFonts.mainFont,
-            height: 1.8,
-            color: AppColors.txtColor),
-        //body small font
-        bodySmall: TextStyle(
-          height: 1.8,
-          color: AppColors.txtColor,
-          fontSize: 14.sp,
-          fontFamily: AppFonts.mainFont,
-        ),
-        // used in hero section title
-        displayLarge: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontFamily: AppFonts.mainFont,
-            color: AppColors.headingColor,
-            fontSize: 75.sp),
-        displaySmall: TextStyle(
-            fontWeight: FontWeight.w700,
-            color: AppColors.headingColor,
-            fontFamily: AppFonts.mainFont,
-            fontSize: 20.sp),
-        // container main headings
-        displayMedium: TextStyle(
-            fontFamily: AppFonts.mainFont,
-            fontWeight: FontWeight.w700,
-            color: AppColors.headingColor,
-            fontSize: 60.sp),
+    //used in header logo
+    headlineMedium: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontFamily: AppFonts.mainFont,
+        color: AppColors.headingColor,
+        fontSize: 26.sp),
+    // used in menu items
+    titleMedium: TextStyle(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w700,
+        fontFamily: AppFonts.mainFont,
+        color: AppColors.headingColor),
+    //main body font
+    bodyMedium: TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w400,
+        fontFamily: AppFonts.mainFont,
+        height: 1.8,
+        color: AppColors.txtColor),
+    //body small font
+    bodySmall: TextStyle(
+      height: 1.8,
+      color: AppColors.txtColor,
+      fontSize: 8.sp,
+      fontFamily: AppFonts.mainFont,
+    ),
+    // used in hero section title
+    displayLarge: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontFamily: AppFonts.mainFont,
+        color: AppColors.headingColor,
+        fontSize: 35.sp),
+    displaySmall: TextStyle(
+        fontWeight: FontWeight.w700,
+        color: AppColors.headingColor,
+        fontFamily: AppFonts.mainFont,
+        fontSize: 20.sp),
+    // container main headings
+    displayMedium: TextStyle(
+        fontFamily: AppFonts.mainFont,
+        fontWeight: FontWeight.w700,
+        color: AppColors.headingColor,
+        fontSize: 30.sp),
 
-        //hero section description
-        bodyLarge: TextStyle(
-          fontFamily: AppFonts.mainFont,
-          fontSize: 20.sp,
-          color: AppColors.txtColor,
-          fontWeight: FontWeight.w400,
-        ),
-        labelLarge: TextStyle(
-          color: AppColors.txtColor,
-          fontFamily: AppFonts.mainFont,
-          fontSize: 18.sp
-        ),
-        labelMedium: TextStyle(
-          color: AppColors.txtColor,
-          fontFamily: AppFonts.mainFont,
-          fontSize: 15.sp
-        ),
-      );
+    //hero section description
+    bodyLarge: TextStyle(
+      fontFamily: AppFonts.mainFont,
+      fontSize: 12.sp,
+      color: AppColors.txtColor,
+      fontWeight: FontWeight.w400,
+    ),
+    labelLarge: TextStyle(
+        color: AppColors.txtColor,
+        fontFamily: AppFonts.mainFont,
+        fontSize: 18.sp),
+    labelMedium: TextStyle(
+        color: AppColors.txtColor,
+        fontFamily: AppFonts.mainFont,
+        fontSize: 15.sp),
+  );
 }
 
 AppBarTheme appBarTheme() {
