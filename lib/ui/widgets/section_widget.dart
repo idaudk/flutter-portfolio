@@ -6,13 +6,18 @@ import 'package:portfolio_daudk/config/themes/layout_values.dart';
 class SectionWidget extends StatelessWidget {
   Widget child;
   List<Color> colors;
-  bool isMobile;
-  SectionWidget({this.colors = const [], required this.child, this.isMobile = false, super.key});
+  SectionWidget({this.colors = const [], required this.child, super.key});
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
+
     return Container(
-      padding: EdgeInsets.symmetric(vertical: LayoutValues.containerYSpace, horizontal: isMobile ? 10.w : 0),
+      padding: EdgeInsets.symmetric(
+          vertical: isMobile
+              ? LayoutValues.mobileContainerYSpace
+              : LayoutValues.containerYSpace,
+          horizontal: isMobile ? 12.w : 0),
       decoration: BoxDecoration(
           gradient: colors.isEmpty
               ? null

@@ -28,6 +28,7 @@ class CtaBox extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(LayoutValues.cardsInnerSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Icon(
                 CupertinoIcons.sparkles,
@@ -37,11 +38,13 @@ class CtaBox extends StatelessWidget {
               Gap(LayoutValues.cardsOuterYSpace),
               Text(
                 'YOUR PROJECT GOES HERE',
-                style: Theme.of(context).textTheme.headlineMedium,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(),
               ),
               Gap(LayoutValues.cardsOuterYSpace),
               Text(
                 'Let’s turn your idea into a visual reality',
+                textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               Gap(LayoutValues.cardsOuterYSpace + 10),

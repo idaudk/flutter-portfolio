@@ -29,6 +29,10 @@ ThemeData theme(BuildContext context, bool isMobile) {
       scaffoldBackgroundColor: AppColors.bgGrey,
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
+          textStyle: MaterialStateProperty.all(TextStyle(
+              fontSize: isMobile
+                  ? mobileTextTheme().bodyMedium!.fontSize
+                  : desktopTextTheme().bodyMedium!.fontSize)),
           overlayColor: MaterialStateProperty.all(Colors.transparent),
           foregroundColor: MaterialStateProperty.all(AppColors.txtColor),
           backgroundColor: MaterialStateProperty.all(
@@ -63,6 +67,7 @@ ThemeData theme(BuildContext context, bool isMobile) {
           dataRowColor: MaterialStateProperty.all(AppColors.cardGrey)),
       textTheme: isMobile ? mobileTextTheme() : desktopTextTheme(),
       splashColor: AppColors.primaryColor,
+    
       // styling for appbar
       listTileTheme: ListTileThemeData(
           textColor: AppColors.txtColor,
@@ -140,16 +145,16 @@ TextTheme mobileTextTheme() {
         fontWeight: FontWeight.w700,
         fontFamily: AppFonts.mainFont,
         color: AppColors.headingColor,
-        fontSize: 26.sp),
+        fontSize: 18.sp), 
     // used in menu items
     titleMedium: TextStyle(
-        fontSize: 18.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.w700,
         fontFamily: AppFonts.mainFont,
         color: AppColors.headingColor),
     //main body font
     bodyMedium: TextStyle(
-        fontSize: 16.sp,
+        fontSize: 13.sp,
         fontWeight: FontWeight.w400,
         fontFamily: AppFonts.mainFont,
         height: 1.8,
@@ -158,7 +163,7 @@ TextTheme mobileTextTheme() {
     bodySmall: TextStyle(
       height: 1.8,
       color: AppColors.txtColor,
-      fontSize: 8.sp,
+      fontSize: 10.sp,
       fontFamily: AppFonts.mainFont,
     ),
     // used in hero section title
@@ -189,11 +194,11 @@ TextTheme mobileTextTheme() {
     labelLarge: TextStyle(
         color: AppColors.txtColor,
         fontFamily: AppFonts.mainFont,
-        fontSize: 18.sp),
+        fontSize: 14.sp),
     labelMedium: TextStyle(
         color: AppColors.txtColor,
         fontFamily: AppFonts.mainFont,
-        fontSize: 15.sp),
+        fontSize: 13.sp),
   );
 }
 

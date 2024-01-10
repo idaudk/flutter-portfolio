@@ -12,6 +12,7 @@ class ExperienceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
     return Column(
       children: [
         Text(
@@ -21,7 +22,7 @@ class ExperienceSection extends StatelessWidget {
         ),
         Gap(40.h),
         StaggeredGrid.count(
-          crossAxisCount: 2,
+          crossAxisCount: isMobile ? 1 : 2,
           crossAxisSpacing: LayoutValues.cardsOuterYSpace,
           mainAxisSpacing: LayoutValues.cardsOuterXSpace,
           children: List.generate(experienceList.length, (index) {

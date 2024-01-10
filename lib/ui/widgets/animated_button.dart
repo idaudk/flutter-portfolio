@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/config/themes/app_decorations.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
+import 'package:portfolio_daudk/config/themes/layout_values.dart';
 
 class AnimatedButton extends StatefulWidget {
   IconData icon;
@@ -28,7 +29,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
   late Animation _colorAnimation;
   late Animation _gradientBegin;
   late Animation _gradientEnd;
-  late Animation _paddingAnimation;
+  // late Animation _paddingAnimation;
   late Animation _borderAnimation;
   late Animation<double> _rightArrowAnimation;
   late Animation<double> _leftArrowAnimation;
@@ -42,10 +43,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
     _curve = CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
 
     //animation for edgeinsets
-    _paddingAnimation = EdgeInsetsTween(
-      begin: EdgeInsets.only(top: 6.h, bottom: 6.h, right: 8.w, left: 8.w),
-      end: EdgeInsets.only(top: 6.h, bottom: 6.h, right: 8.w, left: 8.w),
-    ).animate(_curve);
+    // _paddingAnimation = EdgeInsetsTween(
+    //   begin: EdgeInsets.only(top: 6.h, bottom: 6.h, right: 8.w, left: 8.w),
+    //   end: EdgeInsets.only(top: 6.h, bottom: 6.h, right: 8.w, left: 8.w),
+    // ).animate(_curve);
 
     //animation for borders
     _borderAnimation = BorderTween(
@@ -121,6 +122,8 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
+
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
       child: AnimatedBuilder(
@@ -136,7 +139,11 @@ class _AnimatedButtonState extends State<AnimatedButton>
             },
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 500),
-              padding: _paddingAnimation.value,
+              padding: EdgeInsets.only(
+                  top: 6.h,
+                  bottom: 6.h,
+                  right: isMobile ? 25.w : 8.w,
+                  left: isMobile ? 25.w : 8.w),
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: const [
                     AppColors.primaryColor,

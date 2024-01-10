@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/ui/widgets/header/menu_item.dart';
 
 import '../../../config/themes/themes.dart';
 
@@ -107,32 +108,3 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
   }
 }
 
-class MenuItem extends StatelessWidget {
-  String number;
-  String title;
-  MenuItem({
-    required this.number,
-    required this.title,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(
-          number,
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall!
-              .copyWith(fontWeight: FontWeight.w700),
-        ),
-        Text(
-          '/ / $title',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-      ],
-    );
-  }
-}

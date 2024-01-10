@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class LayoutValues {
@@ -12,6 +11,7 @@ abstract class LayoutValues {
 
   //container or sections
   static double containerYSpace = 100.h;
+  static double mobileContainerYSpace = 50.h;
 
   //cards
   static double cardsInnerSpace = 30.r;
@@ -20,4 +20,8 @@ abstract class LayoutValues {
 
   // section internal widgets Y spacing
   static double widgetYspace = 30.h;
+}
+
+abstract class BreakPoints{
+  static double mobile = 1100;
 }

@@ -24,7 +24,6 @@ class ExpertiseSection extends StatelessWidget {
         Gap(40.h),
         StaggeredGrid.count(
           crossAxisCount: isMobile ? 1 : 2,
-          
           crossAxisSpacing: LayoutValues.cardsOuterYSpace,
           mainAxisSpacing: LayoutValues.cardsOuterXSpace,
           children: List.generate(expertiseList.length, (index) {
@@ -74,7 +73,7 @@ class TextCell extends StatelessWidget {
                     size: 30.r,
                   ),
                 ),
-                Gap(5.w),
+                Gap(10.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,9 +81,9 @@ class TextCell extends StatelessWidget {
                       UnderlineText(text: title),
                       Text(
                         subtext,
-                        maxLines: 1,
+                        // maxLines: 1,
                         textAlign: TextAlign.start,
-                        overflow: TextOverflow.ellipsis,
+                        // overflow: TextOverflow.ellipsis,
                         style: Theme.of(context)
                             .textTheme
                             .headlineMedium!

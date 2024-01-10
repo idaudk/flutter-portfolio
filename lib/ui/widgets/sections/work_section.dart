@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/ui/widgets/cta_box.dart';
@@ -9,7 +10,8 @@ import '../../../config/themes/themes.dart';
 import '../../../data/models/work_model.dart';
 
 class WorkSection extends StatelessWidget {
-  const WorkSection({super.key});
+  bool isMobile;
+  WorkSection({this.isMobile = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,29 +22,12 @@ class WorkSection extends StatelessWidget {
             child: Text(
           'My Work',
           style: Theme.of(context).textTheme.displayMedium,
-
-          //   child: ShaderMask(
-          // shaderCallback: (Rect bounds) {
-          //   return const LinearGradient(
-          //     colors: <Color>[
-          //       AppColors.primaryColor,
-          //       Colors.amberAccent,
-          //       Colors.pinkAccent,
-          //       AppColors.primaryColor2
-          //     ],
-          //     tileMode: TileMode.mirror,
-          //   ).createShader(bounds);
-          // },
-          // child: Text(
-          //   'My Work',
-          //   style: Theme.of(context).textTheme.displayMedium,
-          // ),
         )),
         Gap(LayoutValues.widgetYspace),
         StaggeredGrid.count(
           crossAxisSpacing: LayoutValues.cardsOuterYSpace,
           mainAxisSpacing: LayoutValues.cardsOuterXSpace,
-          crossAxisCount: 2,
+          crossAxisCount: isMobile ? 1 : 2,
           children: List.generate(workList.length + 1, (index) {
             if (index < workList.length) {
               return Container(
@@ -60,7 +45,7 @@ class WorkSection extends StatelessWidget {
                               UnderlineText(
                                 text: workList[index].title,
                               ),
-                              Gap(LayoutValues.cardsInnerSpace),
+                              Gap(12.h),
                               Text(workList[index].description),
                             ],
                           )),
@@ -86,7 +71,7 @@ class WorkSection extends StatelessWidget {
                     ],
                   ));
             } else {
-              return CtaBox();
+              return const CtaBox();
             }
           }),
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
+import 'package:portfolio_daudk/config/themes/layout_values.dart';
 import 'package:portfolio_daudk/ui/responsive_layout.dart';
 
 import 'config/routes/routes_generator.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // designSize: const Size(390, 844),
 
         builder: (context, child) {
-          bool isMobile = ScreenUtil().screenWidth < 1100;
+          bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
           return MaterialApp(
             // scrollBehavior: CustomScrollBehavior(),
             debugShowCheckedModeBanner: false,

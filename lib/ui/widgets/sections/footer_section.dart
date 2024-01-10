@@ -11,21 +11,29 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
+
     return Container(
       alignment: Alignment.topLeft,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Lets work together!',
-              style: Theme.of(context).textTheme.displayMedium!),
+              style: isMobile
+                  ? Theme.of(context).textTheme.displaySmall
+                  : Theme.of(context).textTheme.displayMedium!),
           Gap(LayoutValues.widgetYspace),
-          const Text(
-            'Are you ready to take your brand to new heights? Let\'s have a quick chat to\ndiscuss your needs and how I can best help your brand reach its full potential.',
-          ),
+          isMobile
+              ? const Text(
+                  'Are you ready to take your brand to new heights? Let\'s have a quick chat to discuss your needs and how I can best help your brand reach its full potential.')
+              : const Text(
+                  'Are you ready to take your brand to new heights? Let\'s have a quick chat to\ndiscuss your needs and how I can best help your brand reach its full potential.',
+                ),
           Gap(LayoutValues.widgetYspace),
           AnimatedButton(
-              text: 'Schedule a free consultation',
-              icon: CupertinoIcons.arrow_right),
+            text: 'Schedule a free consultation',
+            showIcon: isMobile ? false : true,
+          ),
           Gap(40.h),
           Text('Made by Daud K',
               style: Theme.of(context).textTheme.labelMedium),
@@ -43,11 +51,11 @@ class Footer extends StatelessWidget {
               IconButton.outlined(
                   onPressed: () {},
                   icon: const Icon(CupertinoIcons.checkmark_alt_circle)),
-              Gap(2.w),
+              Gap(7.w),
               IconButton.outlined(
                   onPressed: () {},
                   icon: const Icon(CupertinoIcons.checkmark_alt_circle)),
-              Gap(2.w),
+              Gap(7.w),
               IconButton.outlined(
                   onPressed: () {},
                   icon: const Icon(CupertinoIcons.checkmark_alt_circle)),

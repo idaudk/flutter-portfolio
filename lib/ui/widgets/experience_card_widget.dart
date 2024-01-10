@@ -13,11 +13,14 @@ class ExperienceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
+          width: double.infinity,
           padding: EdgeInsets.all(LayoutValues.cardsInnerSpace),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -29,24 +32,41 @@ class ExperienceCard extends StatelessWidget {
                   AppColors.primaryColor2
                 ]),
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  _experience.title,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                  style: Theme.of(context).textTheme.titleMedium,
+          child: isMobile
+              ? Column(
+                  children: [
+                    Text(
+                      _experience.title,
+                      // overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    Text(
+                      _experience.date,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                  ],
+                )
+              : Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        _experience.title,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ),
+                    Text(
+                      _experience.date,
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                  ],
                 ),
-              ),
-              Text(
-                _experience.date,
-                style: Theme.of(context).textTheme.labelMedium,
-              ),
-            ],
-          ),
         ),
         Gap(LayoutValues.cardsOuterYSpace),
         Container(
@@ -78,6 +98,7 @@ class ExperienceCard extends StatelessWidget {
                 width: double.infinity,
                 height: 30.h,
                 child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemCount: 5,
@@ -88,7 +109,8 @@ class ExperienceCard extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: AppDeco.appBorderRadius,
                             color: AppColors.bgGrey),
-                        padding: EdgeInsets.symmetric(horizontal: 5.w),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: isMobile ? 13.w : 5.w),
                         child: Center(
                           child: Text(
                             'Flutter',

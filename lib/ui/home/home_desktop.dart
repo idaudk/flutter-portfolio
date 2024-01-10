@@ -29,18 +29,6 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
   var experience = GlobalKey();
   var contact = GlobalKey();
 
-  double size = 20;
-  double width = 100;
-  var align = Alignment.centerRight;
-  int colorIndex = 0;
-  List color = [
-    Colors.pink,
-    Colors.blue,
-    Colors.greenAccent,
-    Colors.yellowAccent,
-    Colors.amber
-  ];
-
   late ScrollController _scrollController;
 
   @override
@@ -54,22 +42,6 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
     _scrollController.dispose();
     super.dispose();
   }
-
-//   void _scrollToWidget() {
-
-//     Scrollable.ensureVisible(work.currentContext!,
-//         curve: Curves.fastOutSlowIn, duration: Duration(seconds: 1));
-// //     final RenderBox renderBox =
-// //         work.currentContext?.findRenderObject() as RenderBox;
-// //     final double offset = renderBox.localToGlobal(Offset.zero).dy;
-
-// // // Now you can use the offset to scroll to the desired position
-// //     _scrollController.animateTo(
-// //       offset,
-// //       duration: Duration(milliseconds: 500),
-// //       curve: Curves.easeInOut,
-// //     );
-//   }
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +74,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
                 ),
                 SliverToBoxAdapter(
                   key: work,
-                  child: SectionWidget(child: const WorkSection()),
+                  child: SectionWidget(child: WorkSection()),
                 ),
                 SliverToBoxAdapter(
                   key: experience,
