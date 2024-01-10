@@ -49,7 +49,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
       appBar: AppBar(
         title: const Text('Daud k\'s Portfolio'),
       ),
-      floatingActionButton: AnimatedButton(text: 'Resume', showIcon: false),
+      floatingActionButton: AnimatedButton(text: 'Download CV', showIcon: false),
       drawer: Drawer(
         shape: const BeveledRectangleBorder(borderRadius: BorderRadius.zero),
         width: ScreenUtil().screenWidth * 0.8,

@@ -42,8 +42,7 @@ class Footer extends StatelessWidget {
           Text('Daud K |  Flutter Developer  | PEW',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(5.h),
-
-          Text('imdaudk@gmail.com',
+          SelectableText('imdaudk@gmail.com',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(20.h),
           Row(
