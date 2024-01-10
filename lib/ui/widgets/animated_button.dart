@@ -8,7 +8,13 @@ import 'package:portfolio_daudk/config/themes/app_decorations.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
 
 class AnimatedButton extends StatefulWidget {
-  const AnimatedButton({
+  IconData icon;
+  String text;
+  bool showIcon;
+  AnimatedButton({
+    this.icon = CupertinoIcons.arrow_right,
+    required this.text,
+    this.showIcon = true,
     super.key,
   });
 
@@ -30,7 +36,6 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   @override
   void initState() {
-    print('Animated button init');
     _controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 800));
 
@@ -117,10 +122,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter: ImageFilter.blur(
-        sigmaX: 0,
-        sigmaY: 0
-      ),
+      filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
       child: AnimatedBuilder(
         animation: _controller,
         builder: (context, child) {
@@ -151,21 +153,23 @@ class _AnimatedButtonState extends State<AnimatedButton>
                   Padding(
                     padding: EdgeInsets.only(bottom: 3.h),
                     child: Text(
-                      'Schedule a free consultation',
+                      widget.text,
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(),
                     ),
                   ),
-                  Gap(2.w),
-                  Transform.rotate(
-                    //multiplying by 10 to increase the effect
-                    angle: _rightArrowAnimation.value * -1,
-                    // offset: Offset(_rightArrowAnimation.value * 10, 0),
-                    child: Icon(
-                      CupertinoIcons.arrow_right,
-                      color: AppColors.txtColor,
-                      size: 14.r,
-                    ),
-                  ),
+                  widget.showIcon == true ? Gap(2.w) : const SizedBox(),
+                  widget.showIcon == true
+                      ? Transform.rotate(
+                          //multiplying by 10 to increase the effect
+                          angle: _rightArrowAnimation.value * -1,
+                          // offset: Offset(_rightArrowAnimation.value * 10, 0),
+                          child: Icon(
+                            widget.icon,
+                            color: AppColors.txtColor,
+                            size: 14.r,
+                          ),
+                        )
+                      : const SizedBox()
                 ],
               ),
             ),

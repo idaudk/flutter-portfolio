@@ -54,6 +54,7 @@ dependencies:
   web_smooth_scroll: ^1.1.0
   infinite_carousel: ^1.0.3
   hyper_effects: ^0.2.1
+  dotted_decoration: ^2.0.0
 
 dev_dependencies:
   flutter_test:

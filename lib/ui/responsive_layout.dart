@@ -18,7 +18,8 @@ class ResponsiveLayout extends StatelessWidget {
         if (constraints.maxWidth < 500) {
           return mobileScaffold;
         } else if (constraints.maxWidth < 1100) {
-          return tabletScaffold;
+          // return tabletScaffold;
+          return mobileScaffold;
         } else {
           return desktopScaffold;
         }

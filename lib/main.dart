@@ -22,12 +22,14 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         // designSize: const Size(390, 844),
+
         builder: (context, child) {
+          bool isMobile = ScreenUtil().screenWidth < 1100.0;
           return MaterialApp(
             // scrollBehavior: CustomScrollBehavior(),
             debugShowCheckedModeBanner: false,
             title: 'Daud k\'s Portfolio',
-            theme: theme(context),
+            theme: theme(context, isMobile),
             // home: NewScreen
             // home: ResponsiveLayout(mobileScaffold: mobileScaffold, tabletScaffold: tabletScaffold, desktopScaffold: desktopScaffold),
             initialRoute: Routes.home,

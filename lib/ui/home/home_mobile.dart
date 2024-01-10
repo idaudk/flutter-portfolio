@@ -17,6 +17,7 @@ class HomeMobileScreen extends StatelessWidget {
         child: Column(
           children: [
             MobileTabletHeroSection(),
+            
           ],
         ),
       ),
