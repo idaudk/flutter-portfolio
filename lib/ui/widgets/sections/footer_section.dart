@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 
@@ -48,16 +49,17 @@ class Footer extends StatelessWidget {
           Row(
             children: [
               IconButton.outlined(
-                  onPressed: () {},
-                  icon: const Icon(CupertinoIcons.checkmark_alt_circle)),
+                onPressed: () {},
+                icon: const FaIcon(FontAwesomeIcons.github),
+              ),
               Gap(7.w),
               IconButton.outlined(
                   onPressed: () {},
-                  icon: const Icon(CupertinoIcons.checkmark_alt_circle)),
-              Gap(7.w),
-              IconButton.outlined(
-                  onPressed: () {},
-                  icon: const Icon(CupertinoIcons.checkmark_alt_circle)),
+                  icon: const FaIcon(FontAwesomeIcons.linkedin)),
+              // Gap(7.w),
+              // IconButton.outlined(
+              //     onPressed: () {},
+              //     icon: const Icon(CupertinoIcons.checkmark_alt_circle)),
             ],
           )
         ],

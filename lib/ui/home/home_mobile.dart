@@ -47,9 +47,10 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daud k\'s Portfolio'),
+        title: const Text('Daud k._'),
       ),
-      floatingActionButton: AnimatedButton(text: 'Download CV', showIcon: false),
+      floatingActionButton:
+          AnimatedButton(text: 'Download CV', showIcon: false),
       drawer: Drawer(
         shape: const BeveledRectangleBorder(borderRadius: BorderRadius.zero),
         width: ScreenUtil().screenWidth * 0.8,
@@ -60,40 +61,46 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
               EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w, bottom: 20.h),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'DAUD K PORTFOLIO',
+                      'DAUD K._',
                       style: Theme.of(context).textTheme.headlineMedium,
                       // textAlign: TextAlign.start,
                     ),
-                    Gap(10.h),
+                    Gap(20.h),
                     InkWell(
                         onTap: () {
                           scrollToSection(home);
                         },
-                        child: MenuItem(number: '01', title: 'home')),
+                        child: MenuItem(
+                            alignLeft: true, number: '01', title: 'home')),
                     Gap(10.h),
                     InkWell(
                         onTap: () {
                           scrollToSection(expertise);
                         },
-                        child: MenuItem(number: '02', title: 'Expertise')),
+                        child: MenuItem(
+                            alignLeft: true, number: '02', title: 'Expertise')),
                     Gap(10.h),
                     InkWell(
                         onTap: () {
                           scrollToSection(work);
                         },
-                        child: MenuItem(number: '03', title: 'My Work')),
+                        child: MenuItem(
+                            alignLeft: true, number: '03', title: 'My Work')),
                     Gap(10.h),
                     InkWell(
                         onTap: () {
                           scrollToSection(experience);
                         },
-                        child: MenuItem(number: '04', title: 'Experience')),
+                        child: MenuItem(
+                            alignLeft: true,
+                            number: '04',
+                            title: 'Experience')),
                   ],
                 ),
                 Gap(80.h),
