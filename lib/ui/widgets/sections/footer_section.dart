@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:js' as js;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -32,7 +33,7 @@ class Footer extends StatelessWidget {
                 ),
           Gap(LayoutValues.widgetYspace),
           AnimatedButton(
-            text: 'Schedule a free consultation',
+            text: 'Get in Touch',
             showIcon: isMobile ? false : true,
           ),
           Gap(40.h),
@@ -49,13 +50,25 @@ class Footer extends StatelessWidget {
           Row(
             children: [
               IconButton.outlined(
-                onPressed: () {},
-                icon: const FaIcon(FontAwesomeIcons.github),
+                onPressed: () {
+                  // https://github.com/idaudk
+                  js.context.callMethod('open', ['https://github.com/idaudk']);
+                },
+                icon: const FaIcon(
+                  FontAwesomeIcons.github,
+                  size: 20,
+                ),
               ),
               Gap(7.w),
               IconButton.outlined(
-                  onPressed: () {},
-                  icon: const FaIcon(FontAwesomeIcons.linkedin)),
+                  onPressed: () {
+                    js.context
+                        .callMethod('open', ['https://github.com/idaudk']);
+                  },
+                  icon: const FaIcon(
+                    FontAwesomeIcons.linkedin,
+                    size: 20,
+                  )),
               // Gap(7.w),
               // IconButton.outlined(
               //     onPressed: () {},

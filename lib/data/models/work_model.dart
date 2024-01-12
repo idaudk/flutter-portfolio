@@ -42,11 +42,12 @@ List<WorkModel> workList = [
     isAndroid: true,
     isIos: true,
     imgs: [
-      'https://uc2689d932d2ee93579a95f55266.dl.dropboxusercontent.com/cd/0/inline/CLJfPGNI3yWhNZ-88dB3xUAPp22ezAJz5STO69CEle2KdNoEmwAGD9Jt0xWD70EslF6Gu3PrUKJgRhjfzkt2dOBB0CRxxSCLQPeofYTZ_hJb-H5xDREe3VuDQzziVi9emrA36hjYZ9bSlBbZ09GoTmjC/file#',
-      'https://ucde05838bf5302108e83467a5f3.dl.dropboxusercontent.com/cd/0/inline/CLJ0GsLKiurQH6ju2e2mv9KViGXWNoj57IPvEN9j_RHNOy51y-hzciUK0weYXPu47BOdh57C7pV-H2auHP2r-pJnT48zk7Wm0HD33_K8lo-ueC6R_vXyihii6G2Eg3swNErH2HAYDGXVgYSo3hjgtMGk/file#',
-      'https://uc15fc87b8a0da6ff07e8d34d41e.dl.dropboxusercontent.com/cd/0/inline/CLLLYhH7GJcet2L4neTyY0TSTBj9QKpr903bZCmHEU422in0MktYLq5WOTO4fderDnynOEIgFDShFiGJyeVGKglc4M7OPd5MGbaJsGClRkus7GG-I0TV6LSw8pva-9goaBcgoi0Qvn9TukuFSwwEnRsb/file#',
-      'https://uc44e10dd5fba1162dc3687ff93e.dl.dropboxusercontent.com/cd/0/inline/CLLASL9D9b582wYyUrSIt1QrVbrf_OgXFvbQdUa8tqq14BwmKmk1i45ZDGT9QG7rQ9DGdMTCQRd9bYUkxbVRA53ZB1EQPwjAgkAHXipQoOp7by8Y32GAf-XroV8l-d18Sp8Jm1Ig_3ljLC8K97E0B9WC/file#',
-      'https://uc958185dde733e3933f89f0934e.dl.dropboxusercontent.com/cd/0/inline/CLIv7RoZ7-yREsQQJFms0T5gJnQVgyfp38-1DGKmUE2A_u6enQyYzYC5X1kgnpMD1sOusp_apSLqdC7OAQ1JGfup40kOh8UhitDnl92hLz_5xkZj72jdmetBgh_9RMfALJwv5D_oiyxAsjNPueA-nXYo/file#'
+      'https://i.ibb.co/89ccPZ9/189099757-57d61abc-9f99-4465-b591-9e1896118e16.jpg',
+      'https://i.ibb.co/7KvgYG6/189100005-b2b2832e-08e7-415f-a772-f7ce7b450972.jpg',
+      'https://i.ibb.co/qsP91mg/189105659-908ad61f-763f-4868-9744-b6fcee5d9fc0.jpg',
+      'https://i.ibb.co/bXY1Mf4/189105886-31c0a561-c346-49be-a1f6-9e424838f2a9.jpg',
+      'https://i.ibb.co/r0f6DJw/189102647-05a01f5d-a9c8-4f19-b333-bded2fd8d741.jpg',
+      'https://i.ibb.co/YZvmBJb/189107944-46d3d32f-647a-47a9-9bfb-a3f0913da35e.jpg'
     ],
   ),
   WorkModel(

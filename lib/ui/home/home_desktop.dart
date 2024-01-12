@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/config/themes/app_decorations.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/cubits/home/home_cubit.dart';
@@ -13,6 +14,7 @@ import 'package:portfolio_daudk/ui/widgets/sections/expertise_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/footer_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/hero_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/work_section.dart';
+import 'package:portfolio_daudk/ui/widgets/translation.dart';
 
 import '../../config/themes/layout_values.dart';
 
@@ -47,56 +49,75 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: AnimatedButton(
-          text: 'Download CV',
-          showIcon: false,
-        ),
         body: Stack(
-          children: [
-            CustomScrollView(
-              controller: _scrollController,
-              shrinkWrap: true,
-              slivers: [
-                SliverPersistentHeader(
-                    floating: true,
-                    pinned: true,
-                    delegate: DesktopHeader(
-                        context: context,
-                        expertiseKey: expertise,
-                        contactKey: contact,
-                        experienceKey: experience,
-                        homeKey: home,
-                        workKey: work,
-                        scrollController: _scrollController)),
-                SliverToBoxAdapter(
-                  key: home,
-                  child: SectionWidget(child: const HeroSection()),
-                ),
-                SliverToBoxAdapter(
-                  key: expertise,
-                  child: SectionWidget(child: ExpertiseSection()),
-                ),
-                SliverToBoxAdapter(
-                  key: work,
-                  child: SectionWidget(child: WorkSection()),
-                ),
-                SliverToBoxAdapter(
-                  key: experience,
-                  child: SectionWidget(child: const ExperienceSection()),
-                ),
-                SliverToBoxAdapter(
-                  key: contact,
-                  child: SectionWidget(
-                      colors: const [AppColors.cardGrey, AppColors.cardGrey],
-                      child: Footer()),
-                )
-              ],
+      children: [
+        CustomScrollView(
+          controller: _scrollController,
+          shrinkWrap: true,
+          slivers: [
+            SliverPersistentHeader(
+                floating: true,
+                pinned: true,
+                delegate: DesktopHeader(
+                    context: context,
+                    expertiseKey: expertise,
+                    contactKey: contact,
+                    experienceKey: experience,
+                    homeKey: home,
+                    workKey: work,
+                    scrollController: _scrollController)),
+            SliverToBoxAdapter(
+              key: home,
+              child: SectionWidget(
+                  height: ScreenUtil().screenHeight - 80.h,
+                  child: const HeroSection()),
             ),
-
-            // opening animation
-            // AnimatedGates(),
+            SliverToBoxAdapter(
+              child: SectionWidget(
+                  colors: const [AppColors.cardGrey, AppColors.cardGrey],
+                  child: Column(
+                    children: [
+                      const Translation(),
+                      Gap(5.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30.w),
+                        child: const Text(
+                          'I\'m Daud khan, Versatile developer with 3 years of experience across various technologies. Expertise in creating cross-platform mobile applications with a focus on UI/UX design. Skilled in crafting user-friendly websites using Wix and WordPress, ensuring seamless navigation and engaging user experiences. Committed to delivering high-quality, scalable, and visually appealing digital solutions.',
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Gap(30.h),
+                      AnimatedButton(
+                        text: 'Download CV',
+                      ),
+                    ],
+                  )),
+            ),
+            SliverToBoxAdapter(
+              key: expertise,
+              child: SectionWidget(child: ExpertiseSection()),
+            ),
+            SliverToBoxAdapter(
+              key: work,
+              child: SectionWidget(child: WorkSection()),
+            ),
+            SliverToBoxAdapter(
+              key: experience,
+              child: SectionWidget(child: const ExperienceSection()),
+            ),
+            SliverToBoxAdapter(
+              key: contact,
+              child: SectionWidget(
+                  colors: const [AppColors.cardGrey, AppColors.cardGrey],
+                  child: Footer()),
+            )
           ],
-        ));
+        ),
+
+        // opening animation
+        // AnimatedGates(),
+      ],
+    ));
   }
 }
 

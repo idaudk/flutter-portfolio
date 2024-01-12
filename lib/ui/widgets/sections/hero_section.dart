@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:hyper_effects/hyper_effects.dart';
+import 'package:portfolio_daudk/ui/widgets/translation.dart';
 
 import '../../../config/themes/themes.dart';
 
@@ -10,6 +12,7 @@ class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MouseRegion(
           onEnter: (event) {},
@@ -51,15 +54,16 @@ class HeroSection extends StatelessWidget {
         ),
         // .roll(
         //   'Daud k',
+
         //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
         //   tapeCurve: Curves.easeInOutQuart,
-        //   tapeSlideDirection: TapeSlideDirection.down,
-        //   staggerTapes: true,
-        //   staggerSoftness: 6,
-        //   reverseStaggerDirection: true,
+        //   // tapeSlideDirection: TapeSlideDirection.down,
+        //   // staggerTapes: true,
+        //   // staggerSoftness: 6,
+        //   // reverseStaggerDirection: true,
         // )
         // .oneShot(
-        //     duration: Duration(milliseconds: 900),
+        //     duration: const Duration(milliseconds: 900),
         //     repeat: 100,
         //     curve: Curves.easeOutQuart),
         Text(

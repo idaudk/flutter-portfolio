@@ -140,7 +140,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
 
                   Text('imdaudk@gmail.com',
                       style: Theme.of(context).textTheme.labelMedium),
-                  Gap(50.h),
+                  Gap(60.h),
                 ],
               )
               // SectionWidget(key: contact, child: Footer()),

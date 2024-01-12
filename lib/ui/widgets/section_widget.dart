@@ -6,13 +6,19 @@ import 'package:portfolio_daudk/config/themes/layout_values.dart';
 class SectionWidget extends StatelessWidget {
   Widget child;
   List<Color> colors;
-  SectionWidget({this.colors = const [], required this.child, super.key});
+  double? height;
+  SectionWidget(
+      {this.colors = const [],
+      required this.child,
+      this.height,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
     bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
 
     return Container(
+      height: height,
       padding: EdgeInsets.symmetric(
           vertical: isMobile
               ? LayoutValues.mobileContainerYSpace
@@ -25,7 +31,7 @@ class SectionWidget extends StatelessWidget {
                   colors: colors,
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight)),
-      alignment: Alignment.topCenter,
+      alignment: Alignment.center,
       child: LayoutBuilder(
         builder: (context, constraints) {
           // Check if the browser width is greater than 1200px

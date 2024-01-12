@@ -57,6 +57,8 @@ class _WorkSectionState extends State<WorkSection> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -147,7 +149,7 @@ class _WorkSectionState extends State<WorkSection> {
                                 children: [
                                   InfiniteCarousel.builder(
                                     itemCount: workList[index].imgs.length,
-                                    itemExtent: 40.w,
+                                    itemExtent: isMobile ? 190.w : 40.w,
                                     controller: _scrollControllerForward,
                                     center: false,
                                     anchor: 0.0,
@@ -189,7 +191,12 @@ class _WorkSectionState extends State<WorkSection> {
                                                         .imgs[itemIndex])
                                                 .image;
                                             showImageViewer(
-                                                context, imageProvider,
+                                                backgroundColor: AppColors
+                                                    .bgGrey
+                                                    .withOpacity(0.8),
+                                                swipeDismissible: true,
+                                                context,
+                                                imageProvider,
                                                 onViewerDismissed: () {
                                               // print("dismissed");
                                             });
