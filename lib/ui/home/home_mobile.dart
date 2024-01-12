@@ -3,10 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
+import 'package:portfolio_daudk/ui/widgets/sections/about_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/experience_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/expertise_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/footer_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/hero_section.dart';
+import 'package:portfolio_daudk/ui/widgets/sections/mobile_footer_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/work_section.dart';
 
 import '../../config/themes/themes.dart';
@@ -49,8 +51,6 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
       appBar: AppBar(
         title: const Text('Daud k._'),
       ),
-      floatingActionButton:
-          AnimatedButton(text: 'Download CV', showIcon: false),
       drawer: Drawer(
         shape: const BeveledRectangleBorder(borderRadius: BorderRadius.zero),
         width: ScreenUtil().screenWidth * 0.8,
@@ -116,6 +116,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SectionWidget(key: home, child: const HeroSection()),
+              SectionWidget(child: const AboutSection()),
               SectionWidget(
                   key: expertise,
                   child: ExpertiseSection(
@@ -127,23 +128,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                     isMobile: true,
                   )),
               SectionWidget(key: experience, child: const ExperienceSection()),
-              // Footer()
-              Column(
-                children: [
-                  Text('Made by Daud K',
-                      style: Theme.of(context).textTheme.labelMedium),
-                  Gap(20.h),
-                  // Text('Thanks for stopping by ッ')
-                  Text('Daud K |  Flutter Developer  | PEW',
-                      style: Theme.of(context).textTheme.labelMedium),
-                  Gap(5.h),
-
-                  Text('imdaudk@gmail.com',
-                      style: Theme.of(context).textTheme.labelMedium),
-                  Gap(60.h),
-                ],
-              )
-              // SectionWidget(key: contact, child: Footer()),
+              const MobileFooterSection()
             ],
           ),
         ),

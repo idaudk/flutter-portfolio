@@ -53,7 +53,7 @@ class Footer extends StatelessWidget {
               IconButton.outlined(
                 onPressed: () {
                   // https://github.com/idaudk
-                  LaunchNewTabClient('https://github.com/idaudk');
+                  launchNewTabClient('https://github.com/idaudk');
                 },
                 icon: const FaIcon(
                   FontAwesomeIcons.github,
@@ -63,7 +63,7 @@ class Footer extends StatelessWidget {
               Gap(7.w),
               IconButton.outlined(
                   onPressed: () {
-                    LaunchNewTabClient('https://github.com/idaudk');
+                    launchNewTabClient('https://www.linkedin.com/in/idaudk/');
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.linkedin,
@@ -71,7 +71,9 @@ class Footer extends StatelessWidget {
                   )),
               Gap(7.w),
               IconButton.outlined(
-                  onPressed: () {},
+                  onPressed: () {
+                    launchNewTabClient('https://github.com/idaudk');
+                  },
                   icon: const FaIcon(
                     FontAwesomeIcons.spotify,
                     size: 20,

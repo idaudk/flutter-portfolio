@@ -11,6 +11,6 @@ void launchMailClient(String email) async {
   }
 }
 
-void LaunchNewTabClient(String url) async {
+void launchNewTabClient(String url) async {
   js.context.callMethod('open', [url]);
 }
