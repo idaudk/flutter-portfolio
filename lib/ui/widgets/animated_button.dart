@@ -9,13 +9,15 @@ import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/config/themes/layout_values.dart';
 
 class AnimatedButton extends StatefulWidget {
-  IconData icon;
-  String text;
-  bool showIcon;
+  final IconData icon;
+  final String text;
+  final bool showIcon;
+  final Function()? onTap;
   AnimatedButton({
     this.icon = CupertinoIcons.arrow_right,
     required this.text,
     this.showIcon = true,
+    this.onTap ,
     super.key,
   });
 
@@ -137,47 +139,50 @@ class _AnimatedButtonState extends State<AnimatedButton>
             onExit: (e) {
               _controller.reverse();
             },
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 500),
-              padding: EdgeInsets.only(
-                  top: 6.h,
-                  bottom: 6.h,
-                  right: isMobile ? 25.w : 8.w,
-                  left: isMobile ? 25.w : 8.w),
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: const [
-                    AppColors.primaryColor,
-                    AppColors.primaryColor2
-                  ], begin: _gradientBegin.value, end: _gradientEnd.value),
-                  // border: _borderAnimation.value,
-                  // color: _colorAnimation.value,
-                  borderRadius: AppDeco.appBorderRadius),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(bottom: 3.h),
-                    child: Text(
-                      widget.text,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(),
+            child: InkWell(
+              onTap: widget.onTap,
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 500),
+                padding: EdgeInsets.only(
+                    top: 6.h,
+                    bottom: 6.h,
+                    right: isMobile ? 25.w : 8.w,
+                    left: isMobile ? 25.w : 8.w),
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: const [
+                      AppColors.primaryColor,
+                      AppColors.primaryColor2
+                    ], begin: _gradientBegin.value, end: _gradientEnd.value),
+                    // border: _borderAnimation.value,
+                    // color: _colorAnimation.value,
+                    borderRadius: AppDeco.appBorderRadius),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 3.h),
+                      child: Text(
+                        widget.text,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(),
+                      ),
                     ),
-                  ),
-                  widget.showIcon == true ? Gap(2.w) : const SizedBox(),
-                  widget.showIcon == true
-                      ? Transform.rotate(
-                          //multiplying by 10 to increase the effect
-                          angle: _rightArrowAnimation.value * -1,
-                          // offset: Offset(_rightArrowAnimation.value * 10, 0),
-                          child: Icon(
-                            widget.icon,
-                            color: AppColors.txtColor,
-                            size: 14.r,
-                          ),
-                        )
-                      : const SizedBox()
-                ],
+                    widget.showIcon == true ? Gap(2.w) : const SizedBox(),
+                    widget.showIcon == true
+                        ? Transform.rotate(
+                            //multiplying by 10 to increase the effect
+                            angle: _rightArrowAnimation.value * -1,
+                            // offset: Offset(_rightArrowAnimation.value * 10, 0),
+                            child: Icon(
+                              widget.icon,
+                              color: AppColors.txtColor,
+                              size: 14.r,
+                            ),
+                          )
+                        : const SizedBox()
+                  ],
+                ),
               ),
             ),
           );

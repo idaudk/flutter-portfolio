@@ -52,20 +52,6 @@ class HeroSection extends StatelessWidget {
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.displayLarge,
         ),
-        // .roll(
-        //   'Daud k',
-
-        //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-        //   tapeCurve: Curves.easeInOutQuart,
-        //   // tapeSlideDirection: TapeSlideDirection.down,
-        //   // staggerTapes: true,
-        //   // staggerSoftness: 6,
-        //   // reverseStaggerDirection: true,
-        // )
-        // .oneShot(
-        //     duration: const Duration(milliseconds: 900),
-        //     repeat: 100,
-        //     curve: Curves.easeOutQuart),
         Text(
           'SOFTWARE ENGINEER, FLUTTER DEVELOPER.',
           textAlign: TextAlign.center,

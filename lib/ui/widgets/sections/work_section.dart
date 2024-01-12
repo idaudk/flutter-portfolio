@@ -114,10 +114,6 @@ class _WorkSectionState extends State<WorkSection> {
                                         onPressed: () async {
                                           js.context.callMethod(
                                               'open', [singleItem.link]);
-                                          // final Uri _url = Uri.parse('https://flutter.dev');
-                                          // await launchUrl(_url,
-                                          // mode: LaunchMode.
-                                          // );
                                         },
                                         icon: const Icon(CupertinoIcons.link)),
                                 singleItem.isAndroid

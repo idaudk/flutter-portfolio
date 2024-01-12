@@ -1,9 +1,8 @@
-import 'dart:js' as js;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 
 import '../../../config/themes/themes.dart';
@@ -35,12 +34,14 @@ class Footer extends StatelessWidget {
           AnimatedButton(
             text: 'Get in Touch',
             showIcon: isMobile ? false : true,
+            onTap: () {
+              launchMailClient('imdaudk@gmail.com');
+            },
           ),
           Gap(40.h),
           Text('Made by Daud K',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(20.h),
-          // Text('Thanks for stopping by ッ')
           Text('Daud K |  Flutter Developer  | PEW',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(5.h),
@@ -52,7 +53,7 @@ class Footer extends StatelessWidget {
               IconButton.outlined(
                 onPressed: () {
                   // https://github.com/idaudk
-                  js.context.callMethod('open', ['https://github.com/idaudk']);
+                  LaunchNewTabClient('https://github.com/idaudk');
                 },
                 icon: const FaIcon(
                   FontAwesomeIcons.github,
@@ -62,19 +63,29 @@ class Footer extends StatelessWidget {
               Gap(7.w),
               IconButton.outlined(
                   onPressed: () {
-                    js.context
-                        .callMethod('open', ['https://github.com/idaudk']);
+                    LaunchNewTabClient('https://github.com/idaudk');
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.linkedin,
                     size: 20,
                   )),
-              // Gap(7.w),
-              // IconButton.outlined(
-              //     onPressed: () {},
-              //     icon: const Icon(CupertinoIcons.checkmark_alt_circle)),
+              Gap(7.w),
+              IconButton.outlined(
+                  onPressed: () {},
+                  icon: const FaIcon(
+                    FontAwesomeIcons.spotify,
+                    size: 20,
+                  )),
             ],
-          )
+          ),
+          Gap(20.h),
+          Text('Build with Flutter',
+              style: Theme.of(context).textTheme.labelMedium),
+          Gap(5.h),
+          Text('Thanks for stopping by ッ',
+              style: Theme.of(context).textTheme.labelMedium)
+
+          // Text('Made in  🇵🇰', style: Theme.of(context).textTheme.labelMedium),
         ],
       ),
     );

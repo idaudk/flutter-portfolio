@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -15,6 +16,7 @@ import 'package:portfolio_daudk/ui/widgets/sections/footer_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/hero_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/work_section.dart';
 import 'package:portfolio_daudk/ui/widgets/translation.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../config/themes/layout_values.dart';
 
@@ -110,7 +112,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
               child: SectionWidget(
                   colors: const [AppColors.cardGrey, AppColors.cardGrey],
                   child: Footer()),
-            )
+            ),
           ],
         ),
 
