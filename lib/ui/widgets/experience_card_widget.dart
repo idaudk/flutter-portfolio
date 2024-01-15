@@ -1,9 +1,8 @@
-import 'dart:js' as js;
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/data/models/experience_model.dart';
 
 import '../../config/themes/themes.dart';
@@ -29,10 +28,7 @@ class ExperienceCard extends StatelessWidget {
             gradient: LinearGradient(
                 end: Alignment.bottomRight,
                 begin: Alignment.topLeft,
-                colors: [
-                  AppColors.primaryColor,
-                  AppColors.primaryColor2
-                ]),
+                colors: [AppColors.primaryColor, AppColors.primaryColor2]),
           ),
           child: isMobile
               ? Column(
@@ -89,7 +85,7 @@ class ExperienceCard extends StatelessWidget {
                         Gap(LayoutValues.appYSpace),
                         TextButton.icon(
                             onPressed: () {
-                              js.context.callMethod('open', [_experience.link]);
+                              launchNewTabClient(_experience.link);
                             },
                             autofocus: false,
                             icon: const Icon(CupertinoIcons.link),
@@ -109,7 +105,7 @@ class ExperienceCard extends StatelessWidget {
                         Gap(LayoutValues.appXSpace),
                         TextButton.icon(
                             onPressed: () {
-                              js.context.callMethod('open', [_experience.link]);
+                              launchNewTabClient(_experience.link);
                             },
                             autofocus: false,
                             icon: const Icon(CupertinoIcons.link),

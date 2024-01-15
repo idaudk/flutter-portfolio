@@ -1,6 +1,7 @@
-import 'dart:js' as js;
+
 
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 void launchMailClient(String email) async {
@@ -12,5 +13,9 @@ void launchMailClient(String email) async {
 }
 
 void launchNewTabClient(String url) async {
-  js.context.callMethod('open', [url]);
+  // context.callMethod('open', [url]);
+  await launchUrl(
+      Uri.parse(url),
+      webOnlyWindowName: '_blank',
+    );
 }

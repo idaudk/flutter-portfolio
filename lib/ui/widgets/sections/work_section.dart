@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:ui';
 import 'dart:ui_web';
-import 'dart:js' as js;
 
 import 'package:easy_image_viewer/easy_image_viewer.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/cta_box.dart';
 import 'package:portfolio_daudk/ui/widgets/custom_image.dart';
 import 'package:portfolio_daudk/ui/widgets/underline_title_widget.dart';
@@ -112,8 +112,7 @@ class _WorkSectionState extends State<WorkSection> {
                                     ? const SizedBox.shrink()
                                     : IconButton.outlined(
                                         onPressed: () async {
-                                          js.context.callMethod(
-                                              'open', [singleItem.link]);
+                                          launchNewTabClient(singleItem.link!);
                                         },
                                         icon: const Icon(CupertinoIcons.link)),
                                 singleItem.isAndroid
