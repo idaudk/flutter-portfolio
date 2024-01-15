@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +8,6 @@ import 'package:portfolio_daudk/cubits/home/home_cubit.dart';
 import 'package:portfolio_daudk/ui/widgets/header/desktop_header.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/sections.dart';
-import 'dart:math' as math;
 
 import '../../config/themes/layout_values.dart';
 
@@ -30,19 +28,19 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
 
   late ScrollController _scrollController;
   late ScrollController _textScrollController;
-  late AnimationController _animationController;
+  // late AnimationController _animationController;
 
   @override
   void initState() {
     _scrollController = ScrollController();
     _textScrollController = ScrollController();
 
-    _animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    )..addListener(() {
-        setState(() {});
-      });
+    // _animationController = AnimationController(
+    //   vsync: this,
+    //   duration: const Duration(seconds: 1),
+    // )..addListener(() {
+    //     setState(() {});
+    //   });
 
     super.initState();
   }
@@ -56,8 +54,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
 
   @override
   Widget build(BuildContext context) {
-    double offset = _animationController.value *
-        100.0; // Adjust the multiplier based on the desired animation range
+    // double offset = _animationController.value *
+    //     100.0; // Adjust the multiplier based on the desired animation range
     return Scaffold(
         body: Stack(
       children: [
@@ -82,14 +80,14 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                   height: ScreenUtil().screenHeight - 160.h,
                   child: const HeroSection()),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: SectionWidget(
-                  colors: const [AppColors.cardGrey, AppColors.cardGrey],
-                  child: const AboutSection()),
+                  colors: [AppColors.cardGrey, AppColors.cardGrey],
+                  child: AboutSection()),
             ),
             SliverToBoxAdapter(
               key: expertise,
-              child: Stack(
+              child: const Stack(
                 clipBehavior: Clip.none,
                 alignment: Alignment.center,
                 children: [
@@ -123,16 +121,16 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
             ),
             SliverToBoxAdapter(
               key: work,
-              child: SectionWidget(child: WorkSection()),
+              child: const SectionWidget(child: WorkSection()),
             ),
             SliverToBoxAdapter(
               key: experience,
-              child: SectionWidget(child: const ExperienceSection()),
+              child: const SectionWidget(child: ExperienceSection()),
             ),
             SliverToBoxAdapter(
               key: contact,
-              child: SectionWidget(
-                  colors: const [AppColors.cardGrey, AppColors.cardGrey],
+              child: const SectionWidget(
+                  colors: [AppColors.cardGrey, AppColors.cardGrey],
                   child: Footer()),
             ),
           ],
@@ -156,7 +154,7 @@ class TextSlider extends StatefulWidget {
 
 class _TextSliderState extends State<TextSlider> with TickerProviderStateMixin {
   late AnimationController _controller;
-  late var _curve;
+  late CurvedAnimation  _curve;
   late Animation<double> offset;
 
   @override
@@ -287,7 +285,6 @@ class AnimatedGates extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.all(LayoutValues.cardsInnerSpace),
                         decoration: BoxDecoration(
-                            boxShadow: [],
                             borderRadius: AppDeco.appBorderRadius,
                             color: AppColors.bgGrey),
                         child: Text(

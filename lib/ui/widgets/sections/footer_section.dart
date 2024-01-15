@@ -8,7 +8,7 @@ import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 import '../../../config/themes/themes.dart';
 
 class Footer extends StatelessWidget {
-  Footer({super.key});
+  const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -8,8 +8,8 @@ import 'package:portfolio_daudk/data/models/experience_model.dart';
 import '../../config/themes/themes.dart';
 
 class ExperienceCard extends StatelessWidget {
-  Experience _experience;
-  ExperienceCard(this._experience, {super.key});
+  final Experience _experience;
+  const ExperienceCard(this._experience, {super.key});
 
   @override
   Widget build(BuildContext context) {

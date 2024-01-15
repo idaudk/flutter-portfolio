@@ -13,7 +13,7 @@ class AnimatedButton extends StatefulWidget {
   final String text;
   final bool showIcon;
   final Function()? onTap;
-  AnimatedButton({
+  const AnimatedButton({
     this.icon = CupertinoIcons.arrow_right,
     required this.text,
     this.showIcon = true,

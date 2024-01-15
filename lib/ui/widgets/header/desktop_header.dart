@@ -65,23 +65,23 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
                     children: [
                       InkWell(
                           onTap: () => scrollToSection(homeKey),
-                          child: MenuItem(number: '01', title: 'home')),
+                          child: const MenuItem(number: '01', title: 'home')),
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(expertiseKey),
-                          child: MenuItem(number: '02', title: 'expertise')),
+                          child: const MenuItem(number: '02', title: 'expertise')),
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(workKey),
-                          child: MenuItem(number: '03', title: 'work')),
+                          child: const MenuItem(number: '03', title: 'work')),
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(experienceKey),
-                          child: MenuItem(number: '04', title: 'experience')),
+                          child: const MenuItem(number: '04', title: 'experience')),
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(contactKey),
-                          child: MenuItem(number: '05', title: 'contact')),
+                          child: const MenuItem(number: '05', title: 'contact')),
                     ],
                   ),
                 ],
@@ -94,11 +94,9 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  // TODO: implement maxExtent
   double get maxExtent => 80.h;
 
   @override
-  // TODO: implement minExtent
   double get minExtent => 80.h;
 
   @override

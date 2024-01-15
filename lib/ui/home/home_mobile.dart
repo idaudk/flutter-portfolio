@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/about_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/experience_section.dart';
@@ -13,7 +12,6 @@ import 'package:portfolio_daudk/ui/widgets/sections/hero_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/mobile_footer_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/work_section.dart';
 
-import '../../config/themes/themes.dart';
 import '../widgets/header/menu_item.dart';
 
 class HomeMobileScreen extends StatefulWidget {
@@ -86,14 +84,14 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                             onTap: () {
                               scrollToSection(home);
                             },
-                            child: MenuItem(
+                            child: const MenuItem(
                                 alignLeft: true, number: '01', title: 'home')),
                         Gap(10.h),
                         InkWell(
                             onTap: () {
                               scrollToSection(expertise);
                             },
-                            child: MenuItem(
+                            child: const MenuItem(
                                 alignLeft: true,
                                 number: '02',
                                 title: 'Expertise')),
@@ -102,7 +100,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                             onTap: () {
                               scrollToSection(work);
                             },
-                            child: MenuItem(
+                            child: const MenuItem(
                                 alignLeft: true,
                                 number: '03',
                                 title: 'My Work')),
@@ -111,14 +109,14 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                             onTap: () {
                               scrollToSection(experience);
                             },
-                            child: MenuItem(
+                            child: const MenuItem(
                                 alignLeft: true,
                                 number: '04',
                                 title: 'Experience')),
                       ],
                     ),
                     Gap(80.h),
-                    Footer()
+                    const Footer()
                   ]),
             ),
           ),
@@ -132,15 +130,15 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SectionWidget(key: home, child: const HeroSection()),
-              SectionWidget(child: const AboutSection()),
+              const SectionWidget(child: AboutSection()),
               SectionWidget(
                   key: expertise,
-                  child: ExpertiseSection(
+                  child: const ExpertiseSection(
                     isMobile: true,
                   )),
               SectionWidget(
                   key: work,
-                  child: WorkSection(
+                  child: const WorkSection(
                     isMobile: true,
                   )),
               SectionWidget(key: experience, child: const ExperienceSection()),

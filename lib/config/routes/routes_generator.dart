@@ -14,7 +14,7 @@ class Routes {
 
 class RouteGenerator {
   Route<dynamic> generateRoute(RouteSettings routeSettings) {
-    final args = routeSettings.arguments;
+    // final args = routeSettings.arguments;
 
     switch (routeSettings.name) {
       case Routes.splash:

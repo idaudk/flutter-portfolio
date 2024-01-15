@@ -1,6 +1,4 @@
-import 'dart:async';
 import 'dart:ui';
-import 'dart:ui_web';
 
 import 'package:easy_image_viewer/easy_image_viewer.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,14 +11,13 @@ import 'package:portfolio_daudk/ui/widgets/cta_box.dart';
 import 'package:portfolio_daudk/ui/widgets/custom_image.dart';
 import 'package:portfolio_daudk/ui/widgets/underline_title_widget.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../config/themes/themes.dart';
 import '../../../data/models/work_model.dart';
 
 class WorkSection extends StatefulWidget {
-  bool isMobile;
-  WorkSection({this.isMobile = false, super.key});
+  final bool isMobile;
+ const WorkSection({this.isMobile = false, super.key});
 
   @override
   State<WorkSection> createState() => _WorkSectionState();

@@ -21,7 +21,7 @@ class AboutSection extends StatelessWidget {
                         ),
                       ),
                       Gap(30.h),
-                      AnimatedButton(
+                      const AnimatedButton(
                         text: 'Download CV',
                       ),
                     ],

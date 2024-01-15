@@ -8,8 +8,8 @@ import 'package:portfolio_daudk/ui/widgets/underline_title_widget.dart';
 import '../../../config/themes/themes.dart';
 
 class ExpertiseSection extends StatelessWidget {
-  bool isMobile;
-  ExpertiseSection({this.isMobile = false, super.key});
+  final bool isMobile;
+  const  ExpertiseSection({this.isMobile = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class TextCell extends StatelessWidget {
   final String description;
   final IconData icon;
 
-  TextCell(
+  const TextCell(
       {required this.title,
       required this.subtext,
       required this.description,

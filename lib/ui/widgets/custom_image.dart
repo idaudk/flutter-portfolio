@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_daudk/config/themes/app_themes.dart';
 
 class CustomImage extends StatelessWidget {
   final String imageUrl;
@@ -49,7 +48,6 @@ class CustomImage extends StatelessWidget {
         ),
       ),
       errorWidget: (context, url, error) {
-        print(error);
         return errorImage != null
           ? Image.asset(errorImage!)
           : const Icon(

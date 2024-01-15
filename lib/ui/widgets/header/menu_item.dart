@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {
-  String number;
-  String title;
-  bool alignLeft;
-  MenuItem({
+ final  String number;
+  final String title;
+  final bool alignLeft;
+  const MenuItem({
     required this.number,
     required this.title,
     this.alignLeft = false,

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:hyper_effects/hyper_effects.dart';
-import 'package:portfolio_daudk/ui/widgets/translation.dart';
 
 import '../../../config/themes/themes.dart';
 

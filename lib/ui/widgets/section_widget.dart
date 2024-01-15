@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_daudk/config/themes/layout_values.dart';
 
 class SectionWidget extends StatelessWidget {
-  Widget child;
-  List<Color> colors;
-  double? height;
-  SectionWidget(
+  final Widget child;
+  final List<Color> colors;
+  final double? height;
+  const SectionWidget(
       {this.colors = const [],
       required this.child,
       this.height,

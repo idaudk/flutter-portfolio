@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hyper_effects/hyper_effects.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/config/themes/layout_values.dart';
