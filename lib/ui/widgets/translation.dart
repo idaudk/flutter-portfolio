@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hyper_effects/hyper_effects.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
+import 'package:portfolio_daudk/config/themes/layout_values.dart';
 
 class Translation extends StatefulWidget {
   const Translation({super.key});
@@ -56,6 +58,8 @@ class _TranslationState extends State<Translation> {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -106,9 +110,10 @@ class _TranslationState extends State<Translation> {
         Text(
           ', Stranger',
           style: Theme.of(context).textTheme.displayMedium,
-          strutStyle: const StrutStyle(
+          strutStyle: StrutStyle(
             // fontSize: 56,
-            height: 5,
+            //TODO fix height
+            height: isMobile ? 2 : 5,
             forceStrutHeight: true,
             leading: 1,
           ),

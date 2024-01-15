@@ -7,7 +7,6 @@ import 'package:portfolio_daudk/ui/widgets/header/menu_item.dart';
 
 import '../../../config/themes/themes.dart';
 
-
 class DesktopHeader extends SliverPersistentHeaderDelegate {
   ScrollController scrollController;
   GlobalKey expertiseKey;
@@ -107,4 +106,3 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
     return false;
   }
 }
-

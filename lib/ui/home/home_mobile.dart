@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -51,61 +53,75 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
       appBar: AppBar(
         title: const Text('Daud k._'),
       ),
-      drawer: Drawer(
-        shape: const BeveledRectangleBorder(borderRadius: BorderRadius.zero),
-        width: ScreenUtil().screenWidth * 0.8,
-        backgroundColor: AppColors.cardGrey,
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          padding:
-              EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w, bottom: 20.h),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
+      drawer: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(
+            sigmaX: 15,
+            sigmaY: 15,
+          ),
+          child: Drawer(
+            elevation: 0,
+            shape:
+                const BeveledRectangleBorder(borderRadius: BorderRadius.zero),
+            width: ScreenUtil().screenWidth * 0.8,
+            backgroundColor: Colors.transparent,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.only(
+                  top: 20.h, right: 20.w, left: 20.w, bottom: 20.h),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'DAUD K._',
-                      style: Theme.of(context).textTheme.headlineMedium,
-                      // textAlign: TextAlign.start,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'DAUD K._',
+                          style: Theme.of(context).textTheme.headlineMedium,
+                          // textAlign: TextAlign.start,
+                        ),
+                        Gap(20.h),
+                        InkWell(
+                            onTap: () {
+                              scrollToSection(home);
+                            },
+                            child: MenuItem(
+                                alignLeft: true, number: '01', title: 'home')),
+                        Gap(10.h),
+                        InkWell(
+                            onTap: () {
+                              scrollToSection(expertise);
+                            },
+                            child: MenuItem(
+                                alignLeft: true,
+                                number: '02',
+                                title: 'Expertise')),
+                        Gap(10.h),
+                        InkWell(
+                            onTap: () {
+                              scrollToSection(work);
+                            },
+                            child: MenuItem(
+                                alignLeft: true,
+                                number: '03',
+                                title: 'My Work')),
+                        Gap(10.h),
+                        InkWell(
+                            onTap: () {
+                              scrollToSection(experience);
+                            },
+                            child: MenuItem(
+                                alignLeft: true,
+                                number: '04',
+                                title: 'Experience')),
+                      ],
                     ),
-                    Gap(20.h),
-                    InkWell(
-                        onTap: () {
-                          scrollToSection(home);
-                        },
-                        child: MenuItem(
-                            alignLeft: true, number: '01', title: 'home')),
-                    Gap(10.h),
-                    InkWell(
-                        onTap: () {
-                          scrollToSection(expertise);
-                        },
-                        child: MenuItem(
-                            alignLeft: true, number: '02', title: 'Expertise')),
-                    Gap(10.h),
-                    InkWell(
-                        onTap: () {
-                          scrollToSection(work);
-                        },
-                        child: MenuItem(
-                            alignLeft: true, number: '03', title: 'My Work')),
-                    Gap(10.h),
-                    InkWell(
-                        onTap: () {
-                          scrollToSection(experience);
-                        },
-                        child: MenuItem(
-                            alignLeft: true,
-                            number: '04',
-                            title: 'Experience')),
-                  ],
-                ),
-                Gap(80.h),
-                Footer()
-              ]),
+                    Gap(80.h),
+                    Footer()
+                  ]),
+            ),
+          ),
         ),
       ),
       body: SizedBox(
