@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 import 'package:portfolio_daudk/ui/widgets/translation.dart';
 
@@ -21,8 +22,11 @@ class AboutSection extends StatelessWidget {
                         ),
                       ),
                       Gap(30.h),
-                      const AnimatedButton(
-                        text: 'Download CV',
+                      AnimatedButton(
+                        onTap: (){
+                          launchNewTabClient('https://drive.google.com/file/d/19UxLz0DyLcA1wzPC5TscFUgluDh11yeA/view?usp=sharing');
+                        },
+                        text: 'Resume',
                       ),
                     ],
                   );
