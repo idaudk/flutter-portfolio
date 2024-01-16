@@ -13,7 +13,6 @@ void launchMailClient(String email) async {
 }
 
 void launchNewTabClient(String url) async {
-  // context.callMethod('open', [url]);
   await launchUrl(
       Uri.parse(url),
       webOnlyWindowName: '_blank',

@@ -83699,7 +83699,7 @@ A.a2s.prototype={
 $0(){A.l7("https://www.linkedin.com/in/idaudk/")},
 $S:0}
 A.a2t.prototype={
-$0(){A.l7("https://github.com/idaudk")},
+$0(){A.l7("https://open.spotify.com/playlist/4Dl4dlMI2LeSw21zKnr7E6?si=de85e30fe95d4c91")},
 $S:0}
 A.IH.prototype={
 H(a){var s,r,q,p,o,n,m=null,l=$.as(),k=l.d

@@ -72,7 +72,7 @@ class Footer extends StatelessWidget {
               Gap(7.w),
               IconButton.outlined(
                   onPressed: () {
-                    launchNewTabClient('https://github.com/idaudk');
+                    launchNewTabClient('https://open.spotify.com/playlist/4Dl4dlMI2LeSw21zKnr7E6?si=de85e30fe95d4c91');
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.spotify,
