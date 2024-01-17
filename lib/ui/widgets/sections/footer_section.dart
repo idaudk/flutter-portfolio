@@ -60,7 +60,7 @@ class Footer extends StatelessWidget {
                   size: 20,
                 ),
               ),
-              Gap(7.w),
+              const Gap(13),
               IconButton.outlined(
                   onPressed: () {
                     launchNewTabClient('https://www.linkedin.com/in/idaudk/');
@@ -69,10 +69,11 @@ class Footer extends StatelessWidget {
                     FontAwesomeIcons.linkedin,
                     size: 20,
                   )),
-              Gap(7.w),
+              const Gap(13),
               IconButton.outlined(
                   onPressed: () {
-                    launchNewTabClient('https://open.spotify.com/playlist/4Dl4dlMI2LeSw21zKnr7E6?si=de85e30fe95d4c91');
+                    launchNewTabClient(
+                        'https://open.spotify.com/playlist/4Dl4dlMI2LeSw21zKnr7E6?si=de85e30fe95d4c91');
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.spotify,

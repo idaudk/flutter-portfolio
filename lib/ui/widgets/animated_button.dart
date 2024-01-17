@@ -17,7 +17,7 @@ class AnimatedButton extends StatefulWidget {
     this.icon = CupertinoIcons.arrow_right,
     required this.text,
     this.showIcon = true,
-    this.onTap ,
+    this.onTap,
     super.key,
   });
 
@@ -144,8 +144,8 @@ class _AnimatedButtonState extends State<AnimatedButton>
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 500),
                 padding: EdgeInsets.only(
-                    top: 6.h,
-                    bottom: 6.h,
+                    top: 11,
+                    bottom: 11,
                     right: isMobile ? 25.w : 8.w,
                     left: isMobile ? 25.w : 8.w),
                 decoration: BoxDecoration(
@@ -165,7 +165,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
                       padding: EdgeInsets.only(bottom: 3.h),
                       child: Text(
                         widget.text,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(height: 1),
                       ),
                     ),
                     widget.showIcon == true ? Gap(2.w) : const SizedBox(),

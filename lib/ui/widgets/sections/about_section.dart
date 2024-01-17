@@ -11,24 +11,25 @@ class AboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-                    children: [
-                      const Translation(),
-                      Gap(5.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30.w),
-                        child: const Text(
-                          'I\'m Daud khan, Versatile developer with 3 years of experience across various technologies. Expertise in creating cross-platform mobile applications with a focus on UI/UX design. Skilled in crafting user-friendly websites using Wix and WordPress, ensuring seamless navigation and engaging user experiences. Committed to delivering high-quality, scalable, and visually appealing digital solutions.',
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      Gap(30.h),
-                      AnimatedButton(
-                        onTap: (){
-                          launchNewTabClient('https://drive.google.com/file/d/19UxLz0DyLcA1wzPC5TscFUgluDh11yeA/view?usp=sharing');
-                        },
-                        text: 'Resume',
-                      ),
-                    ],
-                  );
+      children: [
+        Translation(),
+        Gap(5.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30.w),
+          child: const Text(
+            'I\'m Daud khan, Versatile developer with 3 years of experience across various technologies. Expertise in creating cross-platform mobile applications with a focus on UI/UX design. Skilled in crafting user-friendly websites using Wix and WordPress, ensuring seamless navigation and engaging user experiences. Committed to delivering high-quality, scalable, and visually appealing digital solutions.',
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Gap(30.h),
+        AnimatedButton(
+          onTap: () {
+            launchNewTabClient(
+                'https://drive.google.com/file/d/19UxLz0DyLcA1wzPC5TscFUgluDh11yeA/view?usp=sharing');
+          },
+          text: 'Resume',
+        ),
+      ],
+    );
   }
 }

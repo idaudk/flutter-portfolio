@@ -19,7 +19,7 @@ class HeroSection extends StatelessWidget {
             decoration: BoxDecoration(
                 color: AppColors.cardGrey,
                 borderRadius: BorderRadius.circular(20.r)),
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5.h),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,

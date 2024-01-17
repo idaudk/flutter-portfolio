@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -154,7 +153,7 @@ class TextSlider extends StatefulWidget {
 
 class _TextSliderState extends State<TextSlider> with TickerProviderStateMixin {
   late AnimationController _controller;
-  late CurvedAnimation  _curve;
+  late CurvedAnimation _curve;
   late Animation<double> offset;
 
   @override

@@ -54,8 +54,8 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
       drawer: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
-            sigmaX: 15,
-            sigmaY: 15,
+            sigmaX: 10,
+            sigmaY: 10,
           ),
           child: Drawer(
             elevation: 0,

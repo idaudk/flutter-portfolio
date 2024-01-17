@@ -37,7 +37,7 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
     // Replace this with your actual content
     return ClipRect(
         child: Container(
-      alignment: Alignment.topCenter,
+      alignment: Alignment.center,
       child: BackdropFilter(
         filter: ImageFilter.blur(
           sigmaX: 30,
@@ -51,6 +51,7 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
                 : constraints.maxWidth;
             return Container(
               width: containerWidth,
+              alignment: Alignment.center,
               padding: EdgeInsets.symmetric(
                 vertical: 15.h,
               ),
@@ -62,6 +63,7 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       InkWell(
                           onTap: () => scrollToSection(homeKey),
@@ -69,7 +71,8 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(expertiseKey),
-                          child: const MenuItem(number: '02', title: 'expertise')),
+                          child:
+                              const MenuItem(number: '02', title: 'expertise')),
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(workKey),
@@ -77,11 +80,13 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(experienceKey),
-                          child: const MenuItem(number: '04', title: 'experience')),
+                          child: const MenuItem(
+                              number: '04', title: 'experience')),
                       Gap(LayoutValues.appXSpace),
                       InkWell(
                           onTap: () => scrollToSection(contactKey),
-                          child: const MenuItem(number: '05', title: 'contact')),
+                          child:
+                              const MenuItem(number: '05', title: 'contact')),
                     ],
                   ),
                 ],
@@ -94,10 +99,10 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 80.h;
+  double get maxExtent => 100;
 
   @override
-  double get minExtent => 80.h;
+  double get minExtent => 100;
 
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {

@@ -14,7 +14,7 @@ abstract class LayoutValues {
   static double mobileContainerYSpace = 50.h;
 
   //cards
-  static double cardsInnerSpace = 30.r;
+  static double cardsInnerSpace = 25.r;
   static double cardsOuterYSpace = 10.h;
   static double cardsOuterXSpace = 10.h;
 
@@ -22,6 +22,6 @@ abstract class LayoutValues {
   static double widgetYspace = 30.h;
 }
 
-abstract class BreakPoints{
+abstract class BreakPoints {
   static double mobile = 1100;
 }

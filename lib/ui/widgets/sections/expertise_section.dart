@@ -9,7 +9,7 @@ import '../../../config/themes/themes.dart';
 
 class ExpertiseSection extends StatelessWidget {
   final bool isMobile;
-  const  ExpertiseSection({this.isMobile = false, super.key});
+  const ExpertiseSection({this.isMobile = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class TextCell extends StatelessWidget {
                     size: 30.r,
                   ),
                 ),
-                Gap(10.w),
+                Gap(30.r),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +9,8 @@ import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/config/themes/layout_values.dart';
 
 class Translation extends StatefulWidget {
-  const Translation({super.key});
+  bool isMobile;
+  Translation({this.isMobile = false, super.key});
 
   @override
   State<Translation> createState() => _TranslationState();
@@ -62,50 +64,62 @@ class _TranslationState extends State<Translation> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ShaderMask(
-          shaderCallback: (rect) => LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.white.withOpacity(0),
-              Colors.white,
-              Colors.white,
-              Colors.white,
-              Colors.white,
-              Colors.white.withOpacity(0),
-              // Colors.white,
-            ],
-          ).createShader(rect),
-          child: ShaderMask(
-            shaderCallback: (rect) => const LinearGradient(
-              colors: [
-                AppColors.primaryColor,
-                Colors.pinkAccent
-                // Colors.white,
-              ],
-            ).createShader(rect),
-            child: Text(
-              translations[lastTranslation],
-              style: Theme.of(context).textTheme.displayMedium,
-              // style: GoogleFonts.sacramento().copyWith(
-              //   color: Colors.white,
-              //   fontWeight: FontWeight.bold,
-              //   fontSize: 56,
-              // ),
-            )
-                .roll(
-                  translations[translation],
-                  symbolDistanceMultiplier: 2,
-                  tapeCurve: Curves.easeInOutBack,
-                  widthCurve: Curves.easeInOutQuart,
-                  padding: const EdgeInsets.only(right: 3),
-                )
-                .animate(
-                  trigger: translation,
-                  duration: const Duration(milliseconds: 1000),
+        isMobile
+            ? Row(
+                children: [
+                  Text(
+                    'Hello',
+                    style: Theme.of(context)
+                        .textTheme
+                        .displayMedium!
+                        .copyWith(color: AppColors.primaryColor),
+                  ),
+                ],
+              )
+            : ShaderMask(
+                shaderCallback: (rect) => LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.white.withOpacity(0),
+                    Colors.white,
+                    Colors.white,
+                    Colors.white,
+                    Colors.white,
+                    Colors.white.withOpacity(0),
+                    // Colors.white,
+                  ],
+                ).createShader(rect),
+                child: ShaderMask(
+                  shaderCallback: (rect) => const LinearGradient(
+                    colors: [
+                      AppColors.primaryColor,
+                      Colors.pinkAccent
+                      // Colors.white,
+                    ],
+                  ).createShader(rect),
+                  child: Text(
+                    translations[lastTranslation],
+                    style: Theme.of(context).textTheme.displayMedium,
+                    // style: GoogleFonts.sacramento().copyWith(
+                    //   color: Colors.white,
+                    //   fontWeight: FontWeight.bold,
+                    //   fontSize: 56,
+                    // ),
+                  )
+                      .roll(
+                        translations[translation],
+                        symbolDistanceMultiplier: 2,
+                        tapeCurve: Curves.easeInOutBack,
+                        widthCurve: Curves.easeInOutQuart,
+                        padding: const EdgeInsets.only(right: 3),
+                      )
+                      .animate(
+                        trigger: translation,
+                        duration: const Duration(milliseconds: 1000),
+                      ),
                 ),
-          ),
-        ),
+              ),
         Text(
           ', Stranger',
           style: Theme.of(context).textTheme.displayMedium,

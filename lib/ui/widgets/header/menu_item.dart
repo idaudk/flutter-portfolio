@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class MenuItem extends StatelessWidget {
- final  String number;
+  final String number;
   final String title;
   final bool alignLeft;
   const MenuItem({
@@ -14,14 +15,16 @@ class MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: alignLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment:
+          alignLeft ? CrossAxisAlignment.start : CrossAxisAlignment.end,
       children: [
         Text(
           number,
           style: Theme.of(context)
               .textTheme
               .bodySmall!
-              .copyWith(fontWeight: FontWeight.w700),
+              .copyWith(fontWeight: FontWeight.w700, height: 0),
         ),
         Text(
           '/ / $title',
