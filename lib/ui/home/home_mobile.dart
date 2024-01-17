@@ -125,7 +125,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
       body: SizedBox(
         width: double.infinity,
         child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
+          // physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
