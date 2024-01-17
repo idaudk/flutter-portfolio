@@ -140,6 +140,10 @@ class _AnimatedButtonState extends State<AnimatedButton>
               _controller.reverse();
             },
             child: InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
               onTap: widget.onTap,
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 500),
