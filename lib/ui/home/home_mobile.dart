@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/about_section.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/experience_section.dart';
@@ -36,13 +37,6 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
   @override
   void dispose() {
     super.dispose();
-  }
-
-  // Function to scroll to a specific SliverToBoxAdapter widget based on key
-  void scrollToSection(GlobalKey key) {
-    Navigator.pop(context);
-    Scrollable.ensureVisible(key.currentContext!,
-        curve: Curves.fastOutSlowIn, duration: const Duration(seconds: 1));
   }
 
   @override
@@ -80,41 +74,37 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                             // textAlign: TextAlign.start,
                           ),
                           Gap(20.h),
-                          InkWell(
+                          MenuItem(
                               onTap: () {
-                                scrollToSection(home);
+                                scrollToSection(home, context);
                               },
-                              child: const MenuItem(
-                                  alignLeft: true,
-                                  number: '01',
-                                  title: 'home')),
+                              alignLeft: true,
+                              number: '01',
+                              title: 'home'),
                           Gap(10.h),
-                          InkWell(
+                          MenuItem(
                               onTap: () {
-                                scrollToSection(expertise);
+                                scrollToSection(expertise, context);
                               },
-                              child: const MenuItem(
-                                  alignLeft: true,
-                                  number: '02',
-                                  title: 'Expertise')),
+                              alignLeft: true,
+                              number: '02',
+                              title: 'Expertise'),
                           Gap(10.h),
-                          InkWell(
+                          MenuItem(
                               onTap: () {
-                                scrollToSection(work);
+                                scrollToSection(work, context);
                               },
-                              child: const MenuItem(
-                                  alignLeft: true,
-                                  number: '03',
-                                  title: 'My Work')),
+                              alignLeft: true,
+                              number: '03',
+                              title: 'My Work'),
                           Gap(10.h),
-                          InkWell(
+                          MenuItem(
                               onTap: () {
-                                scrollToSection(experience);
+                                scrollToSection(experience, context);
                               },
-                              child: const MenuItem(
-                                  alignLeft: true,
-                                  number: '04',
-                                  title: 'Experience')),
+                              alignLeft: true,
+                              number: '04',
+                              title: 'Experience'),
                         ],
                       ),
                       Gap(80.h),
@@ -124,29 +114,6 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
             ),
           ),
         ),
-        // body: ListView(
-        //   shrinkWrap: true,
-        //   children: [
-        //     SizedBox(
-        //       key: home,
-        //     ),
-        //     const SectionWidget(child: HeroSection()),
-        //     const SectionWidget(child: AboutSection()),
-        //     SizedBox(
-        //       key: expertise,
-        //     ),
-        //     const SectionWidget(
-        //         child: ExpertiseSection(
-        //       isMobile: true,
-        //     )),
-        //     SectionWidget(
-        //         child: WorkSection(
-        //       isMobile: true,
-        //     )),
-        //     SectionWidget(child: ExperienceSection()),
-        //     MobileFooterSection(),
-        //   ],
-        // )
         body: CustomScrollView(
           shrinkWrap: true,
           slivers: [

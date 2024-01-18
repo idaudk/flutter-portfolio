@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/header/menu_item.dart';
 
 import '../../../config/themes/themes.dart';
@@ -24,12 +25,6 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
       required this.contactKey,
       required this.experienceKey,
       required this.context});
-
-  // Function to scroll to a specific SliverToBoxAdapter widget based on key
-  void scrollToSection(GlobalKey key) {
-    Scrollable.ensureVisible(key.currentContext!,
-        curve: Curves.fastOutSlowIn, duration: const Duration(seconds: 1));
-  }
 
   @override
   Widget build(
@@ -65,28 +60,40 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      InkWell(
-                          onTap: () => scrollToSection(homeKey),
-                          child: const MenuItem(number: '01', title: 'home')),
+                      MenuItem(
+                          onTap: () {
+                            scrollToSectionDesktop(homeKey);
+                          },
+                          number: '01',
+                          title: 'home'),
                       Gap(LayoutValues.appXSpace),
-                      InkWell(
-                          onTap: () => scrollToSection(expertiseKey),
-                          child:
-                              const MenuItem(number: '02', title: 'expertise')),
+                      MenuItem(
+                          onTap: () {
+                            scrollToSectionDesktop(expertiseKey);
+                          },
+                          number: '02',
+                          title: 'expertise'),
                       Gap(LayoutValues.appXSpace),
-                      InkWell(
-                          onTap: () => scrollToSection(workKey),
-                          child: const MenuItem(number: '03', title: 'work')),
+                      MenuItem(
+                          number: '03',
+                          title: 'work',
+                          onTap: () {
+                            scrollToSectionDesktop(workKey);
+                          }),
                       Gap(LayoutValues.appXSpace),
-                      InkWell(
-                          onTap: () => scrollToSection(experienceKey),
-                          child: const MenuItem(
-                              number: '04', title: 'experience')),
+                      MenuItem(
+                          onTap: () {
+                            scrollToSectionDesktop(experienceKey);
+                          },
+                          number: '04',
+                          title: 'experience'),
                       Gap(LayoutValues.appXSpace),
-                      InkWell(
-                          onTap: () => scrollToSection(contactKey),
-                          child:
-                              const MenuItem(number: '05', title: 'contact')),
+                      MenuItem(
+                          onTap: () {
+                            scrollToSectionDesktop(contactKey);
+                          },
+                          number: '05',
+                          title: 'contact'),
                     ],
                   ),
                 ],

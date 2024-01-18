@@ -1,5 +1,6 @@
 
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -18,3 +19,16 @@ void launchNewTabClient(String url) async {
       webOnlyWindowName: '_blank',
     );
 }
+
+// Function to scroll to a specific SliverToBoxAdapter widget based on key
+  void scrollToSection(GlobalKey key, BuildContext context) {
+    Navigator.pop(context);
+    Scrollable.ensureVisible(key.currentContext!,
+        curve: Curves.fastOutSlowIn, duration: const Duration(seconds: 1));
+  }
+
+  // Function to scroll to a specific SliverToBoxAdapter widget based on key
+  void scrollToSectionDesktop(GlobalKey key) {
+    Scrollable.ensureVisible(key.currentContext!,
+        curve: Curves.fastOutSlowIn, duration: const Duration(seconds: 1));
+  }
