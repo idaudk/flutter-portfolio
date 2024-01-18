@@ -34,12 +34,39 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1085670225";
+    const serviceWorkerVersion = "2373560340";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+
+  <!-- css for loading indicator -->
+  <style>
+    #loader {
+      width: 20px;
+      height: 20px;
+      border: 6px solid #111011;
+      border-top: 6px solid #d41cee;
+      border-radius: 50%;
+      animation: spin 2s linear infinite;
+      /* center */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
-<body>
+<body style="background-color:#161616;">
+  <div id="loader"></div>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
