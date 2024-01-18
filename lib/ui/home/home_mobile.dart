@@ -122,30 +122,24 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
           ),
         ),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: SingleChildScrollView(
-          // physics: const BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SectionWidget(key: home, child: const HeroSection()),
-              const SectionWidget(child: AboutSection()),
-              SectionWidget(
-                  key: expertise,
-                  child: const ExpertiseSection(
-                    isMobile: true,
-                  )),
-              SectionWidget(
-                  key: work,
-                  child: const WorkSection(
-                    isMobile: true,
-                  )),
-              SectionWidget(key: experience, child: const ExperienceSection()),
-              const MobileFooterSection()
-            ],
-          ),
-        ),
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          SectionWidget(key: home, child: const HeroSection()),
+          const SectionWidget(child: AboutSection()),
+          SectionWidget(
+              key: expertise,
+              child: const ExpertiseSection(
+                isMobile: true,
+              )),
+          SectionWidget(
+              key: work,
+              child: const WorkSection(
+                isMobile: true,
+              )),
+          SectionWidget(key: experience, child: const ExperienceSection()),
+          const MobileFooterSection()
+        ],
       ),
     );
   }
