@@ -46,6 +46,11 @@ ThemeData theme(BuildContext context, bool isMobile) {
           ),
         ),
       ),
+      scrollbarTheme: const ScrollbarThemeData().copyWith(
+        interactive: true,
+        thumbColor:
+            MaterialStateProperty.all(const Color.fromARGB(255, 34, 34, 34)),
+      ),
       iconTheme: const IconThemeData(color: AppColors.primaryColor),
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -67,7 +72,7 @@ ThemeData theme(BuildContext context, bool isMobile) {
           dataRowColor: MaterialStateProperty.all(AppColors.cardGrey)),
       textTheme: isMobile ? mobileTextTheme() : desktopTextTheme(),
       splashColor: AppColors.primaryColor,
-    
+
       // styling for appbar
       listTileTheme: ListTileThemeData(
           textColor: AppColors.txtColor,
@@ -145,7 +150,7 @@ TextTheme mobileTextTheme() {
         fontWeight: FontWeight.w700,
         fontFamily: AppFonts.mainFont,
         color: AppColors.headingColor,
-        fontSize: 18.sp), 
+        fontSize: 18.sp),
     // used in menu items
     titleMedium: TextStyle(
         fontSize: 16.sp,

@@ -17,7 +17,7 @@ import '../../../data/models/work_model.dart';
 
 class WorkSection extends StatefulWidget {
   final bool isMobile;
- const WorkSection({this.isMobile = false, super.key});
+  const WorkSection({this.isMobile = false, super.key});
 
   @override
   State<WorkSection> createState() => _WorkSectionState();
@@ -146,7 +146,7 @@ class _WorkSectionState extends State<WorkSection> {
                                     center: false,
                                     anchor: 0.0,
                                     velocityFactor: 0.2,
-                                    onIndexChanged: (index) {},
+                                    onIndexChanged: (carouselIndex) {},
                                     axisDirection: Axis.horizontal,
                                     loop: true,
                                     scrollBehavior:
@@ -178,20 +178,21 @@ class _WorkSectionState extends State<WorkSection> {
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           onTap: () {
-                                            final imageProvider = Image.network(
-                                                    workList[index]
-                                                        .imgs[itemIndex])
-                                                .image;
-                                            showImageViewer(
+                                            MultiImageProvider
+                                                multiImageProvider =
+                                                MultiImageProvider(List.generate(
+                                                    workList[index].imgs.length,
+                                                    (listIndex) => NetworkImage(
+                                                        workList[index]
+                                                            .imgs[listIndex])));
+
+                                            showImageViewerPager(
+                                                context, multiImageProvider,
+                                                swipeDismissible: true,
                                                 backgroundColor: AppColors
                                                     .bgGrey
                                                     .withOpacity(0.8),
-                                                swipeDismissible: true,
-                                                context,
-                                                imageProvider,
-                                                onViewerDismissed: () {
-                                              // print("dismissed");
-                                            });
+                                                immersive: true);
                                           },
                                           child: ClipRRect(
                                             borderRadius:

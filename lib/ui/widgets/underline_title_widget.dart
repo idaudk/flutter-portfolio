@@ -27,7 +27,7 @@ class UnderlineText extends StatelessWidget {
             ]),
           ),
           width: double.infinity,
-          height: 10.h,
+          height: 10,
         ),
         Text(
           text,
