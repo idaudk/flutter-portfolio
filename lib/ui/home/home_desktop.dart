@@ -7,6 +7,7 @@ import 'package:portfolio_daudk/cubits/home/home_cubit.dart';
 import 'package:portfolio_daudk/ui/widgets/header/desktop_header.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/sections.dart';
+import 'dart:math' as math;
 
 import '../../config/themes/layout_values.dart';
 
@@ -75,9 +76,16 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                     scrollController: _scrollController)),
             SliverToBoxAdapter(
               key: home,
-              child: SectionWidget(
-                  height: ScreenUtil().screenHeight - 160.h,
-                  child: const HeroSection()),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // const TextSlider(),
+                  // const TextSlider(isSecond: true),
+                  SectionWidget(
+                      height: ScreenUtil().screenHeight - 160.h,
+                      child: const HeroSection()),
+                ],
+              ),
             ),
             const SliverToBoxAdapter(
               child: SectionWidget(
@@ -86,36 +94,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
             ),
             SliverToBoxAdapter(
               key: expertise,
-              child: const Stack(
-                clipBehavior: Clip.none,
-                alignment: Alignment.center,
-                children: [
-                  // TextSlider(),
-
-                  SectionWidget(
-                    child: ExpertiseSection(),
-                  ),
-
-                  // Transform.translate(
-                  //   // angle: -math.pi / 12.0,
-                  //   offset: const Offset(0, 0),
-                  //   child: Container(
-                  //     decoration:
-                  //         const BoxDecoration(color: AppColors.cardGrey),
-                  //     padding: EdgeInsets.symmetric(
-                  //         vertical: LayoutValues.cardsInnerSpace),
-                  //     child: Row(
-                  //       children: [
-                  //         Text(
-                  //           'Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter',
-                  //           textAlign: TextAlign.center,
-                  //           style: Theme.of(context).textTheme.displayLarge,
-                  //         )
-                  //       ],
-                  //     ),
-                  //   ),
-                  // )
-                ],
+              child: const SectionWidget(
+                child: ExpertiseSection(),
               ),
             ),
             SliverToBoxAdapter(
@@ -143,7 +123,9 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
 }
 
 class TextSlider extends StatefulWidget {
+  final bool isSecond;
   const TextSlider({
+    this.isSecond = false,
     super.key,
   });
 
@@ -166,7 +148,8 @@ class _TextSliderState extends State<TextSlider> with TickerProviderStateMixin {
 
     _curve = CurvedAnimation(parent: _controller, curve: Curves.linear);
 
-    offset = Tween<double>(begin: 0, end: -500).animate(_curve);
+    offset = Tween<double>(begin: 0, end: widget.isSecond ? 500 : -500)
+        .animate(_curve);
 
     // If you want to start the animation automatically, uncomment the next line
     _controller.repeat();
@@ -175,38 +158,39 @@ class _TextSliderState extends State<TextSlider> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     // double offset = _controller.value * 2.0;
-    return Transform.rotate(
-      // angle: -math.pi / 12.0,
-      angle: 0,
-      child: Container(
-        alignment: Alignment.bottomCenter,
-        decoration: const BoxDecoration(color: AppColors.primaryColor),
-        // padding: EdgeInsets.symmetric(vertical: LayoutValues.cardsInnerSpace),
-        height: 90.h,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.zero,
-
-          itemCount:
-              2, // You can adjust the itemCount based on your text length
-          itemBuilder: (context, index) {
-            return AnimatedBuilder(
-              animation: _controller,
-              builder: (context, child) {
-                return Transform.translate(
-                  offset: Offset(offset.value, 0),
-                  child: child,
-                );
-              },
-              child: Text(
-                'Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter',
-                style: Theme.of(context)
-                    .textTheme
-                    .displayLarge!
-                    .copyWith(height: 0),
-              ),
-            );
-          },
+    return Transform.scale(
+      scale: 3,
+      child: Transform.rotate(
+        angle: widget.isSecond ? math.pi / 24.0 : -math.pi / 24.0,
+        // angle: 0,
+        child: Container(
+          alignment: Alignment.bottomCenter,
+          decoration: const BoxDecoration(color: AppColors.cardGrey),
+          // padding: EdgeInsets.symmetric(vertical: LayoutValues.cardsInnerSpace),
+          height: 60,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            itemCount:
+                2, // You can adjust the itemCount based on your text length
+            itemBuilder: (context, index) {
+              return AnimatedBuilder(
+                animation: _controller,
+                builder: (context, child) {
+                  return Transform.translate(
+                    offset: Offset(offset.value, 0),
+                    child: child,
+                  );
+                },
+                child: Text(
+                  'Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter',
+                  style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                      height: 0, color: AppColors.bgGrey, fontSize: 40),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
