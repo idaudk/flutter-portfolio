@@ -79,8 +79,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  // const TextSlider(),
-                  // const TextSlider(isSecond: true),
+                  const TextSlider(),
+                  const TextSlider(isSecond: true),
                   SectionWidget(
                       height: ScreenUtil().screenHeight - 160.h,
                       child: const HeroSection()),
@@ -184,7 +184,7 @@ class _TextSliderState extends State<TextSlider> with TickerProviderStateMixin {
                   );
                 },
                 child: Text(
-                  'Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter',
+                  'Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter',
                   style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       height: 0, color: AppColors.bgGrey, fontSize: 40),
                 ),

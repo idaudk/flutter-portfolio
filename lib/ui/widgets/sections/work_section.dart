@@ -178,21 +178,36 @@ class _WorkSectionState extends State<WorkSection> {
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           onTap: () {
-                                            MultiImageProvider
-                                                multiImageProvider =
-                                                MultiImageProvider(List.generate(
-                                                    workList[index].imgs.length,
-                                                    (listIndex) => NetworkImage(
-                                                        workList[index]
-                                                            .imgs[listIndex])));
+                                            final imageProvider = Image.network(
+                                                    workList[index]
+                                                        .imgs[itemIndex])
+                                                .image;
 
-                                            showImageViewerPager(
-                                                context, multiImageProvider,
+                                            showImageViewer(
+                                                context, imageProvider,
+                                                immersive: true,
                                                 swipeDismissible: true,
                                                 backgroundColor: AppColors
                                                     .bgGrey
                                                     .withOpacity(0.8),
-                                                immersive: true);
+                                                onViewerDismissed: () {});
+
+                                            // MultiImageProvider
+                                            //     multiImageProvider =
+                                            //     MultiImageProvider(List.generate(
+                                            //         workList[index].imgs.length,
+                                            //         (listIndex) => NetworkImage(
+                                            //             workList[index]
+                                            //                 .imgs[listIndex])));
+
+                                            // showImageViewerPager(
+                                            //     context, multiImageProvider,
+
+                                            //     swipeDismissible: true,
+                                            //     backgroundColor: AppColors
+                                            //         .bgGrey
+                                            //         .withOpacity(0.8),
+                                            //     immersive: true);
                                           },
                                           child: ClipRRect(
                                             borderRadius:
