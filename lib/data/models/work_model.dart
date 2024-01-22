@@ -5,6 +5,7 @@ class WorkModel {
   bool isAndroid;
   bool isIos;
   List<String> imgs;
+  List<String> tags;
 
   WorkModel(
       {required this.title,
@@ -12,6 +13,7 @@ class WorkModel {
       this.link,
       this.isAndroid = true,
       this.imgs = const [],
+      this.tags = const [],
       this.isIos = true});
 }
 
@@ -19,6 +21,11 @@ List<WorkModel> workList = [
   WorkModel(
       title: 'Sahl App',
       link: 'https://apps.apple.com/us/app/sahl/id1541171602',
+      tags: [
+        'mobile app',
+        'flutter',
+        'e-commerce',
+      ],
       description:
           ' As a Flutter Developer for Sahl, I contributed to Qatar\'s diverse E-Commerce app. From groceries to pets, Sahl offers a seamless shopping experience with a visually appealing interface. My role involved data optimization, secure payment gateways, and an intuitive UI. '),
   WorkModel(
@@ -27,6 +34,11 @@ List<WorkModel> workList = [
           'Mobile Application made with Flutter to be used by rider of Martvers delivery company involving API and Google Map API Integration.',
       isAndroid: true,
       isIos: true,
+      tags: [
+        'mobile app',
+        'flutter',
+        'google map SDK',
+      ],
       imgs: [
         'https://i.ibb.co/jHW9n5Z/189042219-cf2d7eb9-e73c-416f-bf79-2ceb53154e4b.jpg',
         'https://i.ibb.co/8b4s7W3/189040773-4f52936d-28e4-4638-961b-723d01f6a124.jpg',
@@ -40,6 +52,7 @@ List<WorkModel> workList = [
     description:
         'Mobile Application made with Flutter to be used by rider of Martvers delivery company involving API and Google Map API Integration.',
     isAndroid: true,
+    tags: ['mobile app', 'flutter', 'google map SDK', 'mapbox SDK'],
     isIos: true,
     imgs: [
       'https://i.ibb.co/89ccPZ9/189099757-57d61abc-9f99-4465-b591-9e1896118e16.jpg',

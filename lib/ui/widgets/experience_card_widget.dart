@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/data/models/experience_model.dart';
+import 'package:portfolio_daudk/ui/widgets/pill_container.dart';
 
 import '../../config/themes/themes.dart';
 
@@ -129,23 +130,7 @@ class ExperienceCard extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: _experience.tags.length,
                     itemBuilder: (context, index) {
-                      return Container(
-                        margin: EdgeInsets.only(right: 3.w),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: AppDeco.appBorderRadius,
-                            color: AppColors.bgGrey),
-                        padding: const EdgeInsets.symmetric(horizontal: 13),
-                        child: Center(
-                          child: Text(
-                            _experience.tags[index],
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge!
-                                .copyWith(height: -0.1),
-                          ),
-                        ),
-                      );
+                      return PillContainer(text: _experience.tags[index]);
                     }),
               ),
             ],

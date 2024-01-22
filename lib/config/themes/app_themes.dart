@@ -17,6 +17,7 @@ abstract class AppColors {
   static const Color greenBg = Color.fromARGB(255, 54, 133, 56);
   static const Color lightGreen = Colors.greenAccent;
   static const Color white = Color.fromARGB(255, 245, 245, 245);
+  static const Color borderColor = Colors.white30;
 }
 
 abstract class AppFonts {

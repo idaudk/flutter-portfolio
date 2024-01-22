@@ -25,7 +25,7 @@ class AboutSection extends StatelessWidget {
         AnimatedButton(
           onTap: () {
             launchNewTabClient(
-                'https://drive.google.com/file/d/19UxLz0DyLcA1wzPC5TscFUgluDh11yeA/view?usp=sharing');
+                'https://drive.google.com/file/d/1wjM2VSg6XLh1cKj8CYQ6GpasiCNV56Vw/view?usp=drive_link');
           },
           text: 'Resume',
         ),
