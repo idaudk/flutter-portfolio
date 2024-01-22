@@ -135,8 +135,7 @@ class ExperienceCard extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: AppDeco.appBorderRadius,
                             color: AppColors.bgGrey),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: isMobile ? 13.w : 5.w),
+                        padding: const EdgeInsets.symmetric(horizontal: 13),
                         child: Center(
                           child: Text(
                             _experience.tags[index],

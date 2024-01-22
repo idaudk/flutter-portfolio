@@ -79,8 +79,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  const TextSlider(),
-                  const TextSlider(isSecond: true),
+                  // const TextSlider(),
+                  // const TextSlider(isSecond: true),
                   SectionWidget(
                       height: ScreenUtil().screenHeight - 160.h,
                       child: const HeroSection()),
