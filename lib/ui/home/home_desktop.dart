@@ -143,7 +143,7 @@ class _TextSliderState extends State<TextSlider> with TickerProviderStateMixin {
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 10),
+      duration: const Duration(seconds: 15),
     );
 
     _curve = CurvedAnimation(parent: _controller, curve: Curves.linear);
@@ -184,7 +184,7 @@ class _TextSliderState extends State<TextSlider> with TickerProviderStateMixin {
                   );
                 },
                 child: Text(
-                  'Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter Flutter',
+                  'Flutter  WordPress  Framer  Wix  WebFlow  Flutter  WordPress  Framer  Wix  WebFlow  Flutter  WordPress  Framer  Wix  WebFlow  Flutter  WordPress  Framer  Wix  WebFlow',
                   style: Theme.of(context).textTheme.displayLarge!.copyWith(
                       height: 0, color: AppColors.bgGrey, fontSize: 40),
                 ),
