@@ -40,17 +40,17 @@ List<WorkModel> workList = [
         'google map SDK',
       ],
       imgs: [
-        'https://i.ibb.co/jHW9n5Z/189042219-cf2d7eb9-e73c-416f-bf79-2ceb53154e4b.jpg',
+        'https://i.ibb.co/mbjPPbS/189037257-9bd38bb9-cd7b-4032-96c4-f834c2058c26.jpg'
         'https://i.ibb.co/8b4s7W3/189040773-4f52936d-28e4-4638-961b-723d01f6a124.jpg',
         'https://i.ibb.co/1JCdtV6/189038071-aab061d5-63c8-4006-afb6-00f51c0569cb.jpg',
-        'https://i.ibb.co/mbjPPbS/189037257-9bd38bb9-cd7b-4032-96c4-f834c2058c26.jpg'
+        'https://i.ibb.co/jHW9n5Z/189042219-cf2d7eb9-e73c-416f-bf79-2ceb53154e4b.jpg',
       ],
       link:
           'https://play.google.com/store/apps/details?id=com.cybersync.mertvers_rider_app'),
   WorkModel(
     title: 'We-Ryde',
     description:
-        'We-Ryde is a car-pooling/ride sharing mobile application created using flutter utilyzing different 3rd party API like Firebase, Google Maps, MapBox, the main functionality invloves posted rides and joining the rides.',
+        'We-Ryde is a car-pooling/ride sharing mobile application created using flutter utilyzing different 3rd party APIs like Firebase, Google Maps, MapBox, the main functionality invloves posting rides, requesting to join the ride, accepting or rejecting join request.',
     isAndroid: true,
     tags: ['mobile app', 'flutter', 'google map SDK', 'mapbox SDK'],
     isIos: true,
