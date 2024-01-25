@@ -50,7 +50,7 @@ List<WorkModel> workList = [
   WorkModel(
     title: 'We-Ryde',
     description:
-        'Mobile Application made with Flutter to be used by rider of Martvers delivery company involving API and Google Map API Integration.',
+        'We-Ryde is a car-pooling/ride sharing mobile application created using flutter utilyzing different 3rd party API like Firebase, Google Maps, MapBox, the main functionality invloves posted rides and joining the rides.',
     isAndroid: true,
     tags: ['mobile app', 'flutter', 'google map SDK', 'mapbox SDK'],
     isIos: true,
