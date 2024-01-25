@@ -40,9 +40,9 @@ List<WorkModel> workList = [
         'google map SDK',
       ],
       imgs: [
-        'https://i.ibb.co/mbjPPbS/189037257-9bd38bb9-cd7b-4032-96c4-f834c2058c26.jpg'
-        'https://i.ibb.co/8b4s7W3/189040773-4f52936d-28e4-4638-961b-723d01f6a124.jpg',
+        'https://i.ibb.co/mbjPPbS/189037257-9bd38bb9-cd7b-4032-96c4-f834c2058c26.jpg',
         'https://i.ibb.co/1JCdtV6/189038071-aab061d5-63c8-4006-afb6-00f51c0569cb.jpg',
+        'https://i.ibb.co/8b4s7W3/189040773-4f52936d-28e4-4638-961b-723d01f6a124.jpg',
         'https://i.ibb.co/jHW9n5Z/189042219-cf2d7eb9-e73c-416f-bf79-2ceb53154e4b.jpg',
       ],
       link:
