@@ -8,8 +8,8 @@ import 'package:portfolio_daudk/ui/splash/splash_screen.dart';
 import '../../cubits/home/home_cubit.dart';
 
 class Routes {
-  static const String splash = "/";
-  static const String home = "/home";
+  // static const String splash = "/";
+  static const String home = "/";
 }
 
 class RouteGenerator {
@@ -17,8 +17,8 @@ class RouteGenerator {
     // final args = routeSettings.arguments;
 
     switch (routeSettings.name) {
-      case Routes.splash:
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+      // case Routes.splash:
+      //   return MaterialPageRoute(builder: (_) => const SplashScreen());
 
       case Routes.home:
         // final args = args as int;

@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Daud k\'s Portfolio',
             theme: theme(context, isMobile),
+            
             initialRoute: Routes.home,
             onGenerateRoute: RouteGenerator().generateRoute,
           );
