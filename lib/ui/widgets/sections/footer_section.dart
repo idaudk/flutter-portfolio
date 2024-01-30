@@ -70,6 +70,17 @@ class Footer extends StatelessWidget {
                     size: 20,
                   )),
               const Gap(13),
+
+                  IconButton.outlined(
+                  onPressed: () {
+                    launchNewTabClient(
+                        'https://dribbble.com/daudk');
+                  },
+                  icon: const FaIcon(
+                    FontAwesomeIcons.dribbble,
+                    size: 20,
+                  )),
+              const Gap(13),
               IconButton.outlined(
                   onPressed: () {
                     launchNewTabClient(
