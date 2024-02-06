@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_daudk/ui/home/home_desktop.dart';
 import 'package:portfolio_daudk/ui/home/home_mobile.dart';
 import 'package:portfolio_daudk/ui/responsive_layout.dart';
-import 'package:portfolio_daudk/ui/splash/splash_screen.dart';
 
 import '../../cubits/home/home_cubit.dart';
 

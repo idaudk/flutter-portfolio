@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hyper_effects/hyper_effects.dart';
+import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/config/themes/layout_values.dart';
 
@@ -17,22 +17,7 @@ class Translation extends StatefulWidget {
 }
 
 class _TranslationState extends State<Translation> {
-  List<String> translations = [
-    'Hello',
-    'Bonjour',
-    'Marhaba',
-    'Salaam',
-    'Hola',
-    'Ciao',
-    'Hallo',
-    'Hej',
-    'Ahoj',
-    'Saluton',
-    'Konnichiwa',
-    'Annyeong',
-    'Ni Hao',
-    'Namaste',
-  ];
+  
   int lastTranslation = 0;
   int translation = 0;
 
@@ -46,7 +31,7 @@ class _TranslationState extends State<Translation> {
         Duration(milliseconds: (2000 * timeDilation).toInt()), (timer) {
       setState(() {
         lastTranslation = translation;
-        translation = (translation + 1) % translations.length;
+        translation = (translation + 1) % Constants.translations.length;
       });
     });
   }
@@ -99,7 +84,7 @@ class _TranslationState extends State<Translation> {
                     ],
                   ).createShader(rect),
                   child: Text(
-                    translations[lastTranslation],
+                    Constants.translations[lastTranslation],
                     style: Theme.of(context).textTheme.displayMedium,
                     // style: GoogleFonts.sacramento().copyWith(
                     //   color: Colors.white,
@@ -108,7 +93,7 @@ class _TranslationState extends State<Translation> {
                     // ),
                   )
                       .roll(
-                        translations[translation],
+                        Constants.translations[translation],
                         symbolDistanceMultiplier: 2,
                         tapeCurve: Curves.easeInOutBack,
                         widthCurve: Curves.easeInOutQuart,

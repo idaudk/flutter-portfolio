@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 
@@ -19,23 +20,23 @@ class Footer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Lets work together!',
+          Text(Constants.letsWorkTogether,
               style: isMobile
                   ? Theme.of(context).textTheme.displaySmall
                   : Theme.of(context).textTheme.displayMedium!),
           Gap(LayoutValues.widgetYspace),
           isMobile
               ? const Text(
-                  'Are you ready to take your brand to new heights? Let\'s have a quick chat to discuss your needs and how I can best help your brand reach its full potential.')
+                  Constants.areYouReady)
               : const Text(
-                  'Are you ready to take your brand to new heights? Let\'s have a quick chat to\ndiscuss your needs and how I can best help your brand reach its full potential.',
+                  Constants.areYouReady2,
                 ),
           Gap(LayoutValues.widgetYspace),
           AnimatedButton(
-            text: 'Get in Touch',
+            text: Constants.getInTouch,
             showIcon: isMobile ? false : true,
             onTap: () {
-              launchMailClient('imdaudk@gmail.com');
+              launchMailClient(Constants.email);
             },
           ),
           Gap(40.h),
@@ -45,15 +46,14 @@ class Footer extends StatelessWidget {
           Text('Daud K |  Flutter Developer  | PEW',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(5.h),
-          SelectableText('imdaudk@gmail.com',
+          SelectableText(Constants.email,
               style: Theme.of(context).textTheme.labelMedium),
           Gap(20.h),
           Row(
             children: [
               IconButton.outlined(
                 onPressed: () {
-                  // https://github.com/idaudk
-                  launchNewTabClient('https://github.com/idaudk');
+                  launchNewTabClient(Constants.githubLink);
                 },
                 icon: const FaIcon(
                   FontAwesomeIcons.github,
@@ -63,7 +63,7 @@ class Footer extends StatelessWidget {
               const Gap(13),
               IconButton.outlined(
                   onPressed: () {
-                    launchNewTabClient('https://www.linkedin.com/in/idaudk/');
+                    launchNewTabClient(Constants.linkedInLink);
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.linkedin,
@@ -74,7 +74,7 @@ class Footer extends StatelessWidget {
                   IconButton.outlined(
                   onPressed: () {
                     launchNewTabClient(
-                        'https://dribbble.com/daudk');
+                        Constants.dribbleLink);
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.dribbble,
@@ -84,7 +84,7 @@ class Footer extends StatelessWidget {
               IconButton.outlined(
                   onPressed: () {
                     launchNewTabClient(
-                        'https://open.spotify.com/playlist/4Dl4dlMI2LeSw21zKnr7E6?si=de85e30fe95d4c91');
+                        Constants.spotifyLink);
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.spotify,

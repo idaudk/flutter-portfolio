@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 import 'package:portfolio_daudk/ui/widgets/translation.dart';
@@ -16,8 +17,8 @@ class AboutSection extends StatelessWidget {
         Gap(5.h),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 30.w),
-          child: const Text(
-            'I\'m Daud khan, Versatile developer with 3 years of experience across various technologies. Expertise in creating cross-platform mobile applications with a focus on UI/UX design. Skilled in crafting user-friendly websites using Wix and WordPress, ensuring seamless navigation and engaging user experiences. Committed to delivering high-quality, scalable, and visually appealing digital solutions.',
+          child: const  Text(
+            Constants.aboutText,
             textAlign: TextAlign.center,
           ),
         ),

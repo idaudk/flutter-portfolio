@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gap/gap.dart';
-import 'package:portfolio_daudk/data/models/expertise_model.dart';
+import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/ui/widgets/underline_title_widget.dart';
 
 import '../../../config/themes/themes.dart';
@@ -26,12 +26,12 @@ class ExpertiseSection extends StatelessWidget {
           crossAxisCount: isMobile ? 1 : 2,
           crossAxisSpacing: LayoutValues.cardsOuterYSpace,
           mainAxisSpacing: LayoutValues.cardsOuterXSpace,
-          children: List.generate(expertiseList.length, (index) {
+          children: List.generate(Constants.expertiseList.length, (index) {
             return TextCell(
-              title: expertiseList[index].title,
-              subtext: expertiseList[index].subTitle,
-              description: expertiseList[index].description,
-              icon: expertiseList[index].icon,
+              title: Constants.expertiseList[index].title,
+              subtext: Constants.expertiseList[index].subTitle,
+              description: Constants.expertiseList[index].description,
+              icon: Constants.expertiseList[index].icon,
             );
           }),
         )

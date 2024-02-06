@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gap/gap.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
+import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/ui/widgets/cta_box.dart';
 import 'package:portfolio_daudk/ui/widgets/work_card.dart';
 
@@ -63,9 +64,9 @@ class _WorkSectionState extends State<WorkSection> {
           crossAxisSpacing: LayoutValues.cardsOuterYSpace,
           mainAxisSpacing: LayoutValues.cardsOuterXSpace,
           crossAxisCount: widget.isMobile ? 1 : 2,
-          children: List.generate(workList.length + 1, (index) {
-            if (index < workList.length) {
-              var singleItem = workList[index];
+          children: List.generate(Constants.workList.length + 1, (index) {
+            if (index < Constants.workList.length) {
+              var singleItem = Constants.workList[index];
               return WorkCard(
                   singleItem: singleItem,
                   isMobile: isMobile,

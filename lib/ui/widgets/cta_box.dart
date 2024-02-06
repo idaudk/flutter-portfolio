@@ -2,6 +2,7 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/config/functions.dart';
 import 'package:portfolio_daudk/ui/widgets/animated_button.dart';
 
@@ -38,21 +39,21 @@ class CtaBox extends StatelessWidget {
               ),
               Gap(LayoutValues.cardsOuterYSpace),
               Text(
-                'YOUR PROJECT GOES HERE',
+                Constants.yourProjectgoes,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headlineMedium!.copyWith(),
               ),
               Gap(LayoutValues.cardsOuterYSpace),
               Text(
-                'Let’s turn your idea into a visual reality',
+                Constants.yourProjectgoes2,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               Gap(LayoutValues.cardsOuterYSpace + 10),
               AnimatedButton(
-                  text: 'Get in Touch',
+                  text: Constants.getInTouch,
                   onTap: () {
-                    launchMailClient('imdaudk@gmail.com');
+                    launchMailClient(Constants.email);
                   })
             ],
           ),

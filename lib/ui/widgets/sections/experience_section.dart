@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:gap/gap.dart';
-import 'package:portfolio_daudk/data/models/experience_model.dart';
+import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/ui/widgets/experience_card_widget.dart';
 
 import '../../../config/themes/themes.dart';
@@ -25,8 +25,8 @@ class ExperienceSection extends StatelessWidget {
           crossAxisCount: isMobile ? 1 : 2,
           crossAxisSpacing: LayoutValues.cardsOuterYSpace,
           mainAxisSpacing: LayoutValues.cardsOuterXSpace,
-          children: List.generate(experienceList.length, (index) {
-            return ExperienceCard(experienceList[index]);
+          children: List.generate(Constants.experienceList.length, (index) {
+            return ExperienceCard(Constants.experienceList[index]);
           }),
         )
       ],

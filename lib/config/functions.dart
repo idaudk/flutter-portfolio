@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+
+// open mail sender
 void launchMailClient(String email) async {
   try {
     await launchUrlString('mailto:$email');
@@ -13,6 +15,7 @@ void launchMailClient(String email) async {
   }
 }
 
+//open url in new tab
 void launchNewTabClient(String url) async {
   await launchUrl(
       Uri.parse(url),
