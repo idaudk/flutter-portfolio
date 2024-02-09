@@ -4,9 +4,9 @@ This repository contains my personal portfolio website built using Flutter, show
 
 ## Features
 
-Responsive Design: The portfolio adapts to different screen sizes, ensuring optimal viewing experience across devices.
-Project Showcase: Browse through a curated selection of my projects to get a glimpse of my capabilities and experience.
-Contact Me: Easily reach out via email or social media to connect and discuss potential collaborations.
+**Responsive Design:** The portfolio adapts to different screen sizes, ensuring optimal viewing experience across devices.
+**Project Showcase:** Browse through a curated selection of my projects to get a glimpse of my capabilities and experience.
+**Contact Me:** Easily reach out via email or social media to connect and discuss potential collaborations.
 ## Additional Information
 
 Technologies: Flutter, UI/UX design principles
