@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio_daudk/bloc/home_cubit/home_cubit.dart';
+import 'package:portfolio_daudk/bloc/mouse_bloc/mouse_bloc.dart';
 import 'package:portfolio_daudk/ui/home/home_desktop.dart';
 import 'package:portfolio_daudk/ui/home/home_mobile.dart';
 import 'package:portfolio_daudk/ui/responsive_layout.dart';
-
-import '../../cubits/home/home_cubit.dart';
 
 class Routes {
   // static const String splash = "/";
@@ -22,8 +22,16 @@ class RouteGenerator {
       case Routes.home:
         // final args = args as int;
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: HomeCubit(),
+          builder: (_) => MultiBlocProvider(
+            // value: HomeCubit(),
+            providers: [
+              BlocProvider(
+                create: (_) => HomeCubit(),
+              ),
+              BlocProvider(
+                create: (_) => MouseBloc(),
+              ),
+            ],
             child: const ResponsiveLayout(
               desktopScaffold: HomeDesktopScreen(),
               mobileScaffold: HomeMobileScreen(),

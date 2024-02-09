@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppColors {
   static const Color primaryColor = Color(0xFFd41cee);
@@ -213,8 +212,9 @@ AppBarTheme appBarTheme() {
       color: AppColors.cardGrey,
       centerTitle: true,
       iconTheme: const IconThemeData(color: AppColors.txtColor),
-      titleTextStyle: GoogleFonts.plusJakartaSans(
-          fontWeight: FontWeight.w700, color: AppColors.txtColor));
+      titleTextStyle: mobileTextTheme().headlineMedium
+      
+      );
 }
 
 // //font sizes for smaller device

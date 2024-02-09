@@ -1,16 +1,16 @@
-# portfolio_daudk
+# Flutter Portfolio by Daud K
 
-A new Flutter project.
+This repository contains my personal portfolio website built using Flutter, showcasing my skills, projects, and certifications. Feel free to explore the code and get in touch with me!
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+Responsive Design: The portfolio adapts to different screen sizes, ensuring optimal viewing experience across devices.
+Project Showcase: Browse through a curated selection of my projects to get a glimpse of my capabilities and experience.
+Contact Me: Easily reach out via email or social media to connect and discuss potential collaborations.
+## Additional Information
 
-A few resources to get you started if this is your first Flutter project:
+Technologies: Flutter, UI/UX design principles
+Contact: imdaudk@gmail.com
+## Contributing
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I welcome contributions to improve this portfolio. Please open a pull request with any suggested changes or additions. Make sure to follow the contribution guidelines (if any).

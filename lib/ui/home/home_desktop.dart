@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:portfolio_daudk/bloc/home_cubit/home_cubit.dart';
+import 'package:portfolio_daudk/bloc/mouse_bloc/mouse_bloc.dart';
 import 'package:portfolio_daudk/config/themes/app_decorations.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
-import 'package:portfolio_daudk/cubits/home/home_cubit.dart';
 import 'package:portfolio_daudk/ui/widgets/header/desktop_header.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/sections.dart';
@@ -76,15 +78,126 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                     scrollController: _scrollController)),
             SliverToBoxAdapter(
               key: home,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // const TextSlider(),
-                  // const TextSlider(isSecond: true),
-                  SectionWidget(
-                      height: ScreenUtil().screenHeight - 160.h,
-                      child: const HeroSection()),
-                ],
+              child: MouseRegion(
+                // cursor: SystemMouseCursors.none,
+                onHover: (eve) {
+                  // setState(() {
+                  //   pointer = eve.position;
+                  // });
+                  context
+                      .read<MouseBloc>()
+                      .add(MouseMoveEvent(pointer: eve.position));
+                },
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // outer circle
+                    // BlocBuilder<MouseBloc, MouseState>(
+                    //   builder: (context, state) {
+                    //     return AnimatedPositioned(
+                    //       duration: const Duration(milliseconds: 700),
+                    //       // curve: Curves.easeOutQuart,
+                    //       curve: Curves.linear,
+                    //       left: state.pointer.dx - 100,
+                    //       top: state.pointer.dy - 200,
+                    //       child: Container(
+                    //         height: 200,
+                    //         width: 200,
+                    //         decoration: BoxDecoration(
+                    //             borderRadius: const BorderRadius.all(
+                    //                 Radius.circular(100)),
+                    //             border: Border.all(
+                    //                 width: 4,
+                    //                 color: AppColors.primaryColor,
+                    //                 style: BorderStyle.solid)),
+                    //       ),
+                    //     );
+                    //   },
+                    // ),
+                    // main cursor
+                    // BlocBuilder<MouseBloc, MouseState>(
+                    //   builder: (context, state) {
+                    //     return AnimatedPositioned(
+                    //       duration: const Duration(milliseconds: 100),
+                    //       // curve: Curves.easeOutQuart,
+                    //       curve: Curves.linear,
+                    //       left: state.pointer.dx,
+                    //       top: state.pointer.dy - 100,
+                    //       child: Container(
+                    //         height: 7,
+                    //         width: 7,
+                    //         decoration: BoxDecoration(
+                    //             borderRadius: const BorderRadius.all(
+                    //                 Radius.circular(100)),
+                    //             color: AppColors.primaryColor,
+                    //             border: Border.all(
+                    //                 color: AppColors.primaryColor,
+                    //                 style: BorderStyle.solid)),
+                    //       ),
+                    //     );
+                    //   },
+                    // ),
+                    // 2nd last circle
+                    // BlocBuilder<MouseBloc, MouseState>(
+                    //   builder: (context, state) {
+                    //     return AnimatedPositioned(
+                    //       duration: const Duration(milliseconds: 1800),
+                    //       // curve: Curves.easeOutQuart,
+                    //       left: state.pointer.dx - 600,
+                    //       // top: state.pointer.dy - 100,
+                    //       child: Container(
+                    //         height: 1200,
+                    //         width: 1200,
+                    //         decoration: BoxDecoration(
+                    //             borderRadius: const BorderRadius.all(
+                    //                 Radius.circular(1200)),
+                    //             border: Border.all(
+                    //                 width: 4,
+                    //                 color: AppColors.primaryColor,
+                    //                 style: BorderStyle.solid)),
+                    //       ),
+                    //     );
+                    //   },
+                    // ),
+                    // outer circle last
+                    // BlocBuilder<MouseBloc, MouseState>(
+                    //   builder: (context, state) {
+                    //     return AnimatedPositioned(
+                    //       duration: const Duration(milliseconds: 2500),
+                    //       // curve: Curves.easeOutQuart,
+                    //       left: state.pointer.dx - 800,
+                    //       // top: state.pointer.dy - 100,
+                    //       child: Container(
+                    //         height: 1600,
+                    //         width: 1600,
+                    //         decoration: BoxDecoration(
+                    //             borderRadius: const BorderRadius.all(
+                    //                 Radius.circular(1600)),
+                    //             border: Border.all(
+                    //                 width: 4,
+                    //                 color: AppColors.primaryColor,
+                    //                 style: BorderStyle.solid)),
+                    //       ),
+                    //     );
+                    //   },
+                    // ),
+                    // const TextSlider(),
+                    // const TextSlider(isSecond: true),
+
+                    // Positioned(
+                    //   right: 0,
+                    //   left: 0,
+                    //   bottom: -ScreenUtil().screenHeight * 0.4,
+                    //   child: SvgPicture.asset(
+                    //     'assets/svg/mobile.svg',
+                    //     height: ScreenUtil().screenHeight * 0.7,
+                    //   ),
+                    // ),
+                    SectionWidget(
+                        height: ScreenUtil().screenHeight - 160.h,
+                        child: const HeroSection()),
+                  ],
+                ),
               ),
             ),
             const SliverToBoxAdapter(
