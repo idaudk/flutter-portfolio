@@ -5,8 +5,8 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hyper_effects/hyper_effects.dart';
 import 'package:portfolio_daudk/config/constants/constants.dart';
-import 'package:portfolio_daudk/config/themes/app_themes.dart';
-import 'package:portfolio_daudk/config/themes/layout_values.dart';
+
+import '../../config/themes/themes.dart';
 
 class Translation extends StatefulWidget {
   bool isMobile;

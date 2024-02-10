@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/config/constants/constants.dart';
 import 'package:portfolio_daudk/ui/widgets/underline_title_widget.dart';
@@ -44,7 +45,7 @@ class TextCell extends StatelessWidget {
   final String title;
   final String subtext;
   final String description;
-  final IconData icon;
+  final String icon;
 
   const TextCell(
       {required this.title,
@@ -68,10 +69,11 @@ class TextCell extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 2.h),
-                  child: Icon(
-                    icon,
-                    size: 30.r,
-                  ),
+                  child: SvgPicture.asset(icon, width: 30.r, fit: BoxFit.contain),
+                  // child: Icon(
+                  //   icon,
+                  //   size: 30.r,
+                  // ),
                 ),
                 Gap(30.r),
                 Expanded(

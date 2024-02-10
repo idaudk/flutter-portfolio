@@ -4,7 +4,7 @@ class Expertise {
   String title;
   String subTitle;
   String description;
-  IconData icon;
+  String icon;
   Expertise(
       {required this.title,
       required this.subTitle,

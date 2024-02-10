@@ -13,6 +13,7 @@ import 'package:portfolio_daudk/ui/widgets/custom_image.dart';
 import 'package:portfolio_daudk/ui/widgets/underline_title_widget.dart';
 
 import '../../config/themes/app_themes.dart';
+import '../../config/themes/themes.dart';
 import 'pill_container.dart';
 
 class WorkCard extends StatelessWidget {

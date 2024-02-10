@@ -12,6 +12,7 @@ import 'package:portfolio_daudk/ui/widgets/sections/sections.dart';
 import 'dart:math' as math;
 
 import '../../config/themes/layout_values.dart';
+import '../../config/themes/themes.dart';
 
 class HomeDesktopScreen extends StatefulWidget {
   const HomeDesktopScreen({super.key});
