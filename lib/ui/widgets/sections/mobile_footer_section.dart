@@ -10,10 +10,11 @@ class MobileFooterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Made by Daud K', style: Theme.of(context).textTheme.labelMedium),
+        Text('Design & developed by Daud K',
+            style: Theme.of(context).textTheme.labelMedium),
         Gap(20.h),
         // Text('Thanks for stopping by ッ')
-        Text('Daud K |  Flutter Developer  | PEW',
+        Text('Daud K |  Software Engineer  | PEW',
             style: Theme.of(context).textTheme.labelMedium),
         Gap(5.h),
 

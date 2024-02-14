@@ -26,8 +26,7 @@ class Footer extends StatelessWidget {
                   : Theme.of(context).textTheme.displayMedium!),
           Gap(LayoutValues.widgetYspace),
           isMobile
-              ? const Text(
-                  Constants.areYouReady)
+              ? const Text(Constants.areYouReady)
               : const Text(
                   Constants.areYouReady2,
                 ),
@@ -40,10 +39,10 @@ class Footer extends StatelessWidget {
             },
           ),
           Gap(40.h),
-          Text('Made by Daud K',
+          Text('Design & developed by Daud K',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(20.h),
-          Text('Daud K |  Flutter Developer  | PEW',
+          Text('Daud K |  Software Engineer  | PEW',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(5.h),
           SelectableText(Constants.email,
@@ -70,11 +69,9 @@ class Footer extends StatelessWidget {
                     size: 20,
                   )),
               const Gap(13),
-
-                  IconButton.outlined(
+              IconButton.outlined(
                   onPressed: () {
-                    launchNewTabClient(
-                        Constants.dribbleLink);
+                    launchNewTabClient(Constants.dribbleLink);
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.dribbble,
@@ -83,8 +80,7 @@ class Footer extends StatelessWidget {
               const Gap(13),
               IconButton.outlined(
                   onPressed: () {
-                    launchNewTabClient(
-                        Constants.spotifyLink);
+                    launchNewTabClient(Constants.spotifyLink);
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.spotify,
