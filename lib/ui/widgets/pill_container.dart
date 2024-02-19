@@ -21,7 +21,7 @@ class PillContainer extends StatelessWidget {
             border: Border.all(width: 1, color: AppColors.borderColor)),
         child: Text(
           text,
-          style: Theme.of(context).textTheme.bodySmall!.copyWith(),
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(height: 0),
         ));
   }
 }

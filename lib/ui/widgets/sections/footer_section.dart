@@ -42,7 +42,7 @@ class Footer extends StatelessWidget {
           Text('Design & developed by Daud K',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(20.h),
-          Text('Daud K |  Software Engineer  | PEW',
+          Text('Daud K | Software Engineer | PEW',
               style: Theme.of(context).textTheme.labelMedium),
           Gap(5.h),
           SelectableText(Constants.email,
@@ -54,6 +54,7 @@ class Footer extends StatelessWidget {
                 onPressed: () {
                   launchNewTabClient(Constants.githubLink);
                 },
+                tooltip: 'Github',
                 icon: const FaIcon(
                   FontAwesomeIcons.github,
                   size: 20,
@@ -64,6 +65,7 @@ class Footer extends StatelessWidget {
                   onPressed: () {
                     launchNewTabClient(Constants.linkedInLink);
                   },
+                  tooltip: 'LinkedIn',
                   icon: const FaIcon(
                     FontAwesomeIcons.linkedin,
                     size: 20,
@@ -73,6 +75,7 @@ class Footer extends StatelessWidget {
                   onPressed: () {
                     launchNewTabClient(Constants.dribbleLink);
                   },
+                  tooltip: 'Dribbble',
                   icon: const FaIcon(
                     FontAwesomeIcons.dribbble,
                     size: 20,
@@ -82,6 +85,7 @@ class Footer extends StatelessWidget {
                   onPressed: () {
                     launchNewTabClient(Constants.spotifyLink);
                   },
+                  tooltip: 'Spotify Playlist',
                   icon: const FaIcon(
                     FontAwesomeIcons.spotify,
                     size: 20,

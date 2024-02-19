@@ -67,18 +67,21 @@ class WorkCard extends StatelessWidget {
                       singleItem.link == null
                           ? const SizedBox.shrink()
                           : IconButton.outlined(
+                              tooltip: 'Store Link',
                               onPressed: () async {
                                 launchNewTabClient(singleItem.link!);
                               },
                               icon: const Icon(CupertinoIcons.link)),
                       singleItem.isAndroid
                           ? IconButton.outlined(
+                              tooltip: 'Android Application',
                               mouseCursor: SystemMouseCursors.basic,
                               onPressed: () {},
                               icon: const Icon(Icons.android))
                           : const SizedBox.shrink(),
                       singleItem.isIos
                           ? IconButton.outlined(
+                              tooltip: 'IOS Application',
                               onPressed: () {},
                               mouseCursor: SystemMouseCursors.basic,
                               icon: const Icon(Icons.apple))
@@ -211,5 +214,3 @@ class WorkCard extends StatelessWidget {
         ));
   }
 }
-
-

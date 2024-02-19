@@ -121,18 +121,33 @@ class ExperienceCard extends StatelessWidget {
                 _experience.description,
               ),
               Gap(LayoutValues.cardsOuterYSpace + 10),
-              SizedBox(
-                width: double.infinity,
-                height: 30.h,
-                child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: _experience.tags.length,
-                    itemBuilder: (context, index) {
-                      return PillContainer(text: _experience.tags[index]);
-                    }),
+              SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.only(
+                    // left: LayoutValues.cardsInnerSpace,
+                    // bottom: LayoutValues.cardsInnerSpace
+                    ),
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: List.generate(
+                        _experience.tags.length,
+                        (index) =>
+                            PillContainer(text: _experience.tags[index]))),
               ),
+              // SizedBox(
+              //   width: double.infinity,
+              //   height: 30.h,
+              //   child: ListView.builder(
+              //       physics: const BouncingScrollPhysics(),
+              //       shrinkWrap: true,
+              //       scrollDirection: Axis.horizontal,
+              //       itemCount: _experience.tags.length,
+              //       padding: EdgeInsets.zero,
+              //       itemBuilder: (context, index) {
+              //         return PillContainer(text: _experience.tags[index]);
+              //       }),
+              // ),
             ],
           ),
         ),
