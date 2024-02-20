@@ -7,10 +7,12 @@ class SectionWidget extends StatelessWidget {
   final Widget child;
   final List<Color> colors;
   final double? height;
+  final bool removeVerticalPadding;
   const SectionWidget(
       {this.colors = const [],
       required this.child,
       this.height,
+      this.removeVerticalPadding = false,
       super.key});
 
   @override
@@ -20,9 +22,11 @@ class SectionWidget extends StatelessWidget {
     return Container(
       height: height,
       padding: EdgeInsets.symmetric(
-          vertical: isMobile
-              ? LayoutValues.mobileContainerYSpace
-              : LayoutValues.containerYSpace,
+          vertical: removeVerticalPadding
+              ? 0
+              : isMobile
+                  ? LayoutValues.mobileContainerYSpace
+                  : LayoutValues.containerYSpace,
           horizontal: isMobile ? 12.w : 0),
       decoration: BoxDecoration(
           gradient: colors.isEmpty

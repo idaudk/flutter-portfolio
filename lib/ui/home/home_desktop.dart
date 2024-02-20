@@ -1,9 +1,12 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/bloc/home_cubit/home_cubit.dart';
 import 'package:portfolio_daudk/bloc/mouse_bloc/mouse_bloc.dart';
+import 'package:portfolio_daudk/config/resources/asset_manager.dart';
 import 'package:portfolio_daudk/config/themes/app_decorations.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/ui/widgets/header/desktop_header.dart';
@@ -57,8 +60,6 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
 
   @override
   Widget build(BuildContext context) {
-    // double offset = _animationController.value *
-    //     100.0; // Adjust the multiplier based on the desired animation range
     return Scaffold(
         body: Stack(
       children: [
@@ -78,125 +79,19 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                     workKey: work,
                     scrollController: _scrollController)),
             SliverToBoxAdapter(
-              key: home,
-              child: MouseRegion(
-                // cursor: SystemMouseCursors.none,
-                onHover: (eve) {
-                  // setState(() {
-                  //   pointer = eve.position;
-                  // });
-                  context
-                      .read<MouseBloc>()
-                      .add(MouseMoveEvent(pointer: eve.position));
-                },
-                child: Stack(
-                  alignment: Alignment.center,
+              child: SectionWidget(
+                removeVerticalPadding: true,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    // outer circle
-                    // BlocBuilder<MouseBloc, MouseState>(
-                    //   builder: (context, state) {
-                    //     return AnimatedPositioned(
-                    //       duration: const Duration(milliseconds: 700),
-                    //       // curve: Curves.easeOutQuart,
-                    //       curve: Curves.linear,
-                    //       left: state.pointer.dx - 100,
-                    //       top: state.pointer.dy - 200,
-                    //       child: Container(
-                    //         height: 200,
-                    //         width: 200,
-                    //         decoration: BoxDecoration(
-                    //             borderRadius: const BorderRadius.all(
-                    //                 Radius.circular(100)),
-                    //             border: Border.all(
-                    //                 width: 4,
-                    //                 color: AppColors.primaryColor,
-                    //                 style: BorderStyle.solid)),
-                    //       ),
-                    //     );
-                    //   },
-                    // ),
-                    // main cursor
-                    // BlocBuilder<MouseBloc, MouseState>(
-                    //   builder: (context, state) {
-                    //     return AnimatedPositioned(
-                    //       duration: const Duration(milliseconds: 100),
-                    //       // curve: Curves.easeOutQuart,
-                    //       curve: Curves.linear,
-                    //       left: state.pointer.dx,
-                    //       top: state.pointer.dy - 100,
-                    //       child: Container(
-                    //         height: 7,
-                    //         width: 7,
-                    //         decoration: BoxDecoration(
-                    //             borderRadius: const BorderRadius.all(
-                    //                 Radius.circular(100)),
-                    //             color: AppColors.primaryColor,
-                    //             border: Border.all(
-                    //                 color: AppColors.primaryColor,
-                    //                 style: BorderStyle.solid)),
-                    //       ),
-                    //     );
-                    //   },
-                    // ),
-                    // 2nd last circle
-                    // BlocBuilder<MouseBloc, MouseState>(
-                    //   builder: (context, state) {
-                    //     return AnimatedPositioned(
-                    //       duration: const Duration(milliseconds: 1800),
-                    //       // curve: Curves.easeOutQuart,
-                    //       left: state.pointer.dx - 600,
-                    //       // top: state.pointer.dy - 100,
-                    //       child: Container(
-                    //         height: 1200,
-                    //         width: 1200,
-                    //         decoration: BoxDecoration(
-                    //             borderRadius: const BorderRadius.all(
-                    //                 Radius.circular(1200)),
-                    //             border: Border.all(
-                    //                 width: 4,
-                    //                 color: AppColors.primaryColor,
-                    //                 style: BorderStyle.solid)),
-                    //       ),
-                    //     );
-                    //   },
-                    // ),
-                    // outer circle last
-                    // BlocBuilder<MouseBloc, MouseState>(
-                    //   builder: (context, state) {
-                    //     return AnimatedPositioned(
-                    //       duration: const Duration(milliseconds: 2500),
-                    //       // curve: Curves.easeOutQuart,
-                    //       left: state.pointer.dx - 800,
-                    //       // top: state.pointer.dy - 100,
-                    //       child: Container(
-                    //         height: 1600,
-                    //         width: 1600,
-                    //         decoration: BoxDecoration(
-                    //             borderRadius: const BorderRadius.all(
-                    //                 Radius.circular(1600)),
-                    //             border: Border.all(
-                    //                 width: 4,
-                    //                 color: AppColors.primaryColor,
-                    //                 style: BorderStyle.solid)),
-                    //       ),
-                    //     );
-                    //   },
-                    // ),
-                    // const TextSlider(),
-                    // const TextSlider(isSecond: true),
-
-                    // Positioned(
-                    //   right: 0,
-                    //   left: 0,
-                    //   bottom: -ScreenUtil().screenHeight * 0.4,
-                    //   child: SvgPicture.asset(
-                    //     'assets/svg/mobile.svg',
-                    //     height: ScreenUtil().screenHeight * 0.7,
-                    //   ),
-                    // ),
-                    SectionWidget(
-                        height: ScreenUtil().screenHeight - 160.h,
-                        child: const HeroSection()),
+                    const Expanded(flex: 3, child: HeroSection()),
+                    const Expanded(
+                      child: FirstSlider(),
+                    ),
+                    Gap(LayoutValues.cardsInnerSpace),
+                    const Expanded(
+                      child: SecondSlider(),
+                    )
                   ],
                 ),
               ),
@@ -233,6 +128,58 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
         // AnimatedGates(),
       ],
     ));
+  }
+}
+
+class SecondSlider extends StatelessWidget {
+  const SecondSlider({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider.builder(
+        disableGesture: false,
+        itemCount: 3,
+        itemBuilder: (_, index, index2) => SvgPicture.asset(SvgAssets.mobile),
+        options: CarouselOptions(
+
+            // aspectRatio: ,
+            autoPlay: true,
+            enableInfiniteScroll: true,
+            autoPlayCurve: Curves.linear,
+            scrollDirection: Axis.vertical,
+            autoPlayAnimationDuration: const Duration(seconds: 15),
+            reverse: true,
+            padEnds: false,
+            height: ScreenUtil().screenHeight - 130.h,
+            autoPlayInterval: const Duration(seconds: 4)));
+  }
+}
+
+class FirstSlider extends StatelessWidget {
+  const FirstSlider({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider.builder(
+        disableGesture: false,
+        itemCount: 3,
+        itemBuilder: (_, index, index2) => SvgPicture.asset(SvgAssets.mobile),
+        options: CarouselOptions(
+            pauseAutoPlayOnTouch: false,
+            pauseAutoPlayOnManualNavigate: false,
+            autoPlay: true,
+            enableInfiniteScroll: true,
+            autoPlayCurve: Curves.linear,
+            scrollDirection: Axis.vertical,
+            autoPlayAnimationDuration: const Duration(seconds: 15),
+            reverse: false,
+            padEnds: false,
+            height: ScreenUtil().screenHeight - 130.h,
+            autoPlayInterval: const Duration(seconds: 4)));
   }
 }
 

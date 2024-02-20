@@ -9,7 +9,11 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = ScreenUtil().screenWidth < BreakPoints.mobile;
+
     return Column(
+      crossAxisAlignment:
+          isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
@@ -20,7 +24,7 @@ class HeroSection extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 width: 6.r,
@@ -43,12 +47,12 @@ class HeroSection extends StatelessWidget {
         ),
         Text(
           'Daud K',
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.left,
           style: Theme.of(context).textTheme.displayLarge,
         ),
         Text(
           'SOFTWARE ENGINEER, FLUTTER DEVELOPER.',
-          textAlign: TextAlign.center,
+          textAlign: TextAlign.left,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
       ],

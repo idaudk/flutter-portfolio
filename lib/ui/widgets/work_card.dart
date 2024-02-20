@@ -7,12 +7,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:portfolio_daudk/config/functions.dart';
-import 'package:portfolio_daudk/config/themes/layout_values.dart';
 import 'package:portfolio_daudk/data/models/work_model.dart';
 import 'package:portfolio_daudk/ui/widgets/custom_image.dart';
 import 'package:portfolio_daudk/ui/widgets/underline_title_widget.dart';
 
-import '../../config/themes/app_themes.dart';
 import '../../config/themes/themes.dart';
 import 'pill_container.dart';
 

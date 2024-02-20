@@ -22,7 +22,7 @@ class _AboutSectionState extends State<AboutSection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Translation(),
+        const Translation(),
         Gap(5.h),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 30.w),

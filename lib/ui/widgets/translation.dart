@@ -9,15 +9,14 @@ import 'package:portfolio_daudk/config/constants/constants.dart';
 import '../../config/themes/themes.dart';
 
 class Translation extends StatefulWidget {
-  bool isMobile;
-  Translation({this.isMobile = false, super.key});
+  // bool isMobile;
+  const Translation({super.key});
 
   @override
   State<Translation> createState() => _TranslationState();
 }
 
 class _TranslationState extends State<Translation> {
-  
   int lastTranslation = 0;
   int translation = 0;
 
