@@ -139,21 +139,18 @@ class SecondSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
-        disableGesture: false,
+        disableGesture: true,
         itemCount: 3,
         itemBuilder: (_, index, index2) => SvgPicture.asset(SvgAssets.mobile),
         options: CarouselOptions(
-
-            // aspectRatio: ,
             autoPlay: true,
             enableInfiniteScroll: true,
-            autoPlayCurve: Curves.linear,
             scrollDirection: Axis.vertical,
-            autoPlayAnimationDuration: const Duration(seconds: 15),
+            autoPlayAnimationDuration: const Duration(seconds: 1),
             reverse: true,
             padEnds: false,
             height: ScreenUtil().screenHeight - 130.h,
-            autoPlayInterval: const Duration(seconds: 4)));
+            autoPlayInterval: const Duration(seconds: 5)));
   }
 }
 
@@ -165,7 +162,7 @@ class FirstSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
-        disableGesture: false,
+        disableGesture: true,
         itemCount: 3,
         itemBuilder: (_, index, index2) => SvgPicture.asset(SvgAssets.mobile),
         options: CarouselOptions(
@@ -173,13 +170,12 @@ class FirstSlider extends StatelessWidget {
             pauseAutoPlayOnManualNavigate: false,
             autoPlay: true,
             enableInfiniteScroll: true,
-            autoPlayCurve: Curves.linear,
             scrollDirection: Axis.vertical,
-            autoPlayAnimationDuration: const Duration(seconds: 15),
+            autoPlayAnimationDuration: const Duration(seconds: 1),
             reverse: false,
             padEnds: false,
             height: ScreenUtil().screenHeight - 130.h,
-            autoPlayInterval: const Duration(seconds: 4)));
+            autoPlayInterval: const Duration(seconds: 5)));
   }
 }
 
