@@ -10,6 +10,7 @@ import 'package:portfolio_daudk/config/resources/asset_manager.dart';
 import 'package:portfolio_daudk/config/themes/app_decorations.dart';
 import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/ui/widgets/header/desktop_header.dart';
+import 'package:portfolio_daudk/ui/widgets/hero_slider.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/sections.dart';
 import 'dart:math' as math;
@@ -128,54 +129,6 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
         // AnimatedGates(),
       ],
     ));
-  }
-}
-
-class SecondSlider extends StatelessWidget {
-  const SecondSlider({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-        disableGesture: true,
-        itemCount: 3,
-        itemBuilder: (_, index, index2) => SvgPicture.asset(SvgAssets.mobile),
-        options: CarouselOptions(
-            autoPlay: true,
-            enableInfiniteScroll: true,
-            scrollDirection: Axis.vertical,
-            autoPlayAnimationDuration: const Duration(seconds: 1),
-            reverse: true,
-            padEnds: false,
-            height: ScreenUtil().screenHeight - 130.h,
-            autoPlayInterval: const Duration(seconds: 5)));
-  }
-}
-
-class FirstSlider extends StatelessWidget {
-  const FirstSlider({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return CarouselSlider.builder(
-        disableGesture: true,
-        itemCount: 3,
-        itemBuilder: (_, index, index2) => SvgPicture.asset(SvgAssets.mobile),
-        options: CarouselOptions(
-            pauseAutoPlayOnTouch: false,
-            pauseAutoPlayOnManualNavigate: false,
-            autoPlay: true,
-            enableInfiniteScroll: true,
-            scrollDirection: Axis.vertical,
-            autoPlayAnimationDuration: const Duration(seconds: 1),
-            reverse: false,
-            padEnds: false,
-            height: ScreenUtil().screenHeight - 130.h,
-            autoPlayInterval: const Duration(seconds: 5)));
   }
 }
 

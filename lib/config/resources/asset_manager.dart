@@ -19,4 +19,6 @@ class SvgAssets {
   static const String flutter = '$SVG_PATH/flutter.svg';
   static const String layers = '$SVG_PATH/layers.svg';
   static const String download = '$SVG_PATH/download.svg';
+  static const String login_ui = '$SVG_PATH/login_ui.svg';
+  static const String map_ui = '$SVG_PATH/map_ui.svg';
 }

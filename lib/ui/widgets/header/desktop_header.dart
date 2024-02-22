@@ -105,6 +105,7 @@ class DesktopHeader extends SliverPersistentHeaderDelegate {
     ));
   }
 
+  // height pixel height on all screens
   @override
   double get maxExtent => 100;
 
