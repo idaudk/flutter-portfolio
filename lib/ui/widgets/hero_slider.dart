@@ -7,6 +7,17 @@ import 'package:flutter_svg/svg.dart';
 import '../../config/resources/resources.dart';
 import '../../config/themes/themes.dart';
 
+const List<String> slider2Assets = [
+  SvgAssets.map_ui,
+  SvgAssets.login_ui,
+  SvgAssets.setting_1_ui
+];
+const List<String> slider1Assets = [
+  SvgAssets.setting_1_ui,
+  SvgAssets.setting_2_ui,
+  SvgAssets.setting_3_ui
+];
+
 class FirstSlider extends StatelessWidget {
   const FirstSlider({
     super.key,
@@ -16,10 +27,10 @@ class FirstSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
         disableGesture: true,
-        itemCount: 3,
+        itemCount: slider1Assets.length,
         itemBuilder: (_, index, index2) => Padding(
               padding: EdgeInsets.only(bottom: LayoutValues.cardsInnerSpace),
-              child: SvgPicture.asset(SvgAssets.login_ui),
+              child: SvgPicture.asset(slider1Assets[index]),
             ),
         options: CarouselOptions(
             pauseAutoPlayOnTouch: false,
@@ -39,7 +50,6 @@ class FirstSlider extends StatelessWidget {
   }
 }
 
-
 class SecondSlider extends StatelessWidget {
   const SecondSlider({
     super.key,
@@ -49,10 +59,10 @@ class SecondSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
         disableGesture: true,
-        itemCount: 3,
+        itemCount: slider2Assets.length,
         itemBuilder: (_, index, index2) => Padding(
               padding: EdgeInsets.only(bottom: LayoutValues.cardsInnerSpace),
-              child: SvgPicture.asset(SvgAssets.map_ui),
+              child: SvgPicture.asset(slider2Assets[index]),
             ),
         options: CarouselOptions(
             pauseAutoPlayOnTouch: false,

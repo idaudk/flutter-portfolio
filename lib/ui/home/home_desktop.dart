@@ -83,7 +83,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                     const Expanded(
                       child: FirstSlider(),
                     ),
-                    Gap(LayoutValues.cardsInnerSpace),
+                    Gap(LayoutValues.cardsOuterXSpace),
                     const Expanded(
                       child: SecondSlider(),
                     )
