@@ -141,12 +141,12 @@ abstract class Constants {
         date: 'Aug 2022 - Nov 2022',
         location: 'Peshawar'),
     Experience(
-        title: 'Wordpress Developer @ TechKor',
+        title: 'Wordpress Designer @ TechKor',
         link: 'https://techkor.co/',
         linkName: 'techkor.co',
-        tags: ['wordpress', 'software engineering', 'requirements engineering'],
+        tags: ['Wordpress', 'UI/UX', 'requirements engineering',],
         description:
-            'Worked as a website designer and developed Wordpress website within given time frame and did requirement analysis to customized wordpress websites to fullfill the requirements. ',
+            'As a WordPress designer, my responsibilities include crafting visually appealing and user-friendly websites using WordPress. I customize themes, plugins, and functionalities to meet clients\' specific needs while ensuring seamless performance across devices. I manage multiple projects, deliver on time and within budget, and maintain open communication with clients to realize their vision. Additionally, I stay updated with the latest design trends and technologies to continually enhance the quality of work delivered.',
         date: 'Jan 2021 - Aug 2022',
         location: 'Peshawar'),
   ];

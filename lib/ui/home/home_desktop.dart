@@ -1,21 +1,15 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:portfolio_daudk/bloc/home_cubit/home_cubit.dart';
-import 'package:portfolio_daudk/bloc/mouse_bloc/mouse_bloc.dart';
-import 'package:portfolio_daudk/config/resources/asset_manager.dart';
-import 'package:portfolio_daudk/config/themes/app_decorations.dart';
-import 'package:portfolio_daudk/config/themes/app_themes.dart';
 import 'package:portfolio_daudk/ui/widgets/header/desktop_header.dart';
 import 'package:portfolio_daudk/ui/widgets/hero_slider.dart';
 import 'package:portfolio_daudk/ui/widgets/section_widget.dart';
 import 'package:portfolio_daudk/ui/widgets/sections/sections.dart';
-import 'dart:math' as math;
 
-import '../../config/themes/layout_values.dart';
 import '../../config/themes/themes.dart';
 
 class HomeDesktopScreen extends StatefulWidget {

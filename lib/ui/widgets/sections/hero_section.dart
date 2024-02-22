@@ -51,7 +51,7 @@ class HeroSection extends StatelessWidget {
           style: Theme.of(context).textTheme.displayLarge,
         ),
         Text(
-          'SOFTWARE ENGINEER, FLUTTER DEVELOPER.',
+          'SOFTWARE ENGINEER',
           textAlign: TextAlign.left,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
