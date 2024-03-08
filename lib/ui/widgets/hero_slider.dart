@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -72,7 +71,7 @@ class SecondSlider extends StatelessWidget {
             scrollDirection: Axis.vertical,
             autoPlayAnimationDuration: const Duration(seconds: 1),
             reverse: true,
-            viewportFraction: 0.8,
+            viewportFraction: 0.7,
             autoPlayCurve: Curves.fastOutSlowIn,
             pageSnapping: false,
             aspectRatio: 16.5 / 9,

@@ -62,6 +62,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
           controller: _scrollController,
           shrinkWrap: true,
           slivers: [
+            //menu
             SliverPersistentHeader(
                 floating: true,
                 pinned: true,
@@ -73,43 +74,50 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                     homeKey: home,
                     workKey: work,
                     scrollController: _scrollController)),
+            //hero section
             SliverToBoxAdapter(
-              child: SectionWidget(
+              key: home,
+              child: const SectionWidget(
                 removeVerticalPadding: true,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Expanded(flex: 3, child: HeroSection()),
-                    const Expanded(
+                    Expanded(flex: 3, child: HeroSection()),
+                    Expanded(
                       child: FirstSlider(),
                     ),
-                    Gap(LayoutValues.cardsOuterXSpace),
-                    const Expanded(
+                    Gap(15),
+                    Expanded(
                       child: SecondSlider(),
                     )
                   ],
                 ),
               ),
             ),
+            //about section
             const SliverToBoxAdapter(
               child: SectionWidget(
                   colors: [AppColors.cardGrey, AppColors.cardGrey],
                   child: AboutSection()),
             ),
+            //expertise section
             SliverToBoxAdapter(
               key: expertise,
               child: const SectionWidget(
                 child: ExpertiseSection(),
               ),
             ),
+            //work section
             SliverToBoxAdapter(
               key: work,
               child: const SectionWidget(child: WorkSection()),
             ),
+            //experience section
             SliverToBoxAdapter(
               key: experience,
               child: const SectionWidget(child: ExperienceSection()),
             ),
+            //footer
             SliverToBoxAdapter(
               key: contact,
               child: const SectionWidget(
