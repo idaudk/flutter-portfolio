@@ -86,7 +86,7 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                     Expanded(
                       child: FirstSlider(),
                     ),
-                    Gap(15),
+                    Gap(5),
                     Expanded(
                       child: SecondSlider(),
                     )
