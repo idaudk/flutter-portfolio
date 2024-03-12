@@ -68,7 +68,7 @@ class _AboutSectionState extends State<AboutSection> {
           child: AnimatedButton(
             onTap: () {
               launchNewTabClient(
-                  'https://drive.google.com/file/d/1wjM2VSg6XLh1cKj8CYQ6GpasiCNV56Vw/view?usp=drive_link');
+                  'https://drive.google.com/file/d/1O9_06nslWO-dJpsiZGUXgvWTXVSrswBU/view?usp=sharing');
             },
             text: 'Resume',
           ),
