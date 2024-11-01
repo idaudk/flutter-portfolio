@@ -110,8 +110,8 @@ class _TranslationState extends State<Translation> {
           strutStyle: StrutStyle(
             // fontSize: 56,
             //TODO fix height
-            height: isMobile ? 2 : 5,
-            forceStrutHeight: true,
+            height: isMobile ? -0.8 : 0,
+            // forceStrutHeight: true,
             leading: 1,
           ),
         ),
