@@ -83,7 +83,8 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
             //   ),
             // ),
             //about section
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
+              key: home,
               child: SectionWidget(
                   colors: [AppColors.cardGrey, AppColors.cardGrey],
                   child: AboutSection()),
