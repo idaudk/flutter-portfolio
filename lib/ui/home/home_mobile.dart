@@ -125,7 +125,7 @@ class _HomeMobileScreenState extends State<HomeMobileScreen> {
                   SizedBox(
                     key: home,
                   ),
-                  const SectionWidget(child: HeroSection()),
+                  // const SectionWidget(child: HeroSection()),
                   const SectionWidget(child: AboutSection()),
                   SizedBox(
                     key: expertise,

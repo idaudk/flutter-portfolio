@@ -75,25 +75,13 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen>
                     workKey: work,
                     scrollController: _scrollController)),
             //hero section
-            SliverToBoxAdapter(
-              key: home,
-              child: const SectionWidget(
-                removeVerticalPadding: true,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Expanded(flex: 3, child: HeroSection()),
-                    Expanded(
-                      child: FirstSlider(),
-                    ),
-                    Gap(5),
-                    Expanded(
-                      child: SecondSlider(),
-                    )
-                  ],
-                ),
-              ),
-            ),
+            // SliverToBoxAdapter(
+            //   key: home,
+            //   child: const SectionWidget(
+            //     removeVerticalPadding: false,
+            //     child: HeroSection(),
+            //   ),
+            // ),
             //about section
             const SliverToBoxAdapter(
               child: SectionWidget(
